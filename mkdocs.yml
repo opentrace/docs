@@ -54,3 +54,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Getting Started: getting-started.md
+  - What You Can Do: capabilities.md
+  - Example Workflows: workflows.md
