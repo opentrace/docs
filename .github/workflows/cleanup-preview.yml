@@ -1,0 +1,88 @@
+name: Cleanup Preview Deployment
+
+on:
+  delete:
+    # Triggers when any branch is deleted
+  workflow_dispatch:
+    inputs:
+      branch_name:
+        description: 'Branch name to cleanup (e.g., preview/my-feature)'
+        required: true
+        type: string
+
+permissions:
+  contents: write  # Needed to push to gh-pages branch
+
+concurrency:
+  group: "pages-cleanup"
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    # Only run for preview branches
+    if: startsWith(github.event.ref, 'preview/') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine branch to cleanup
+        id: branch-info
+        run: |
+          if [[ -n "${{ github.event.inputs.branch_name }}" ]]; then
+            BRANCH_NAME="${{ github.event.inputs.branch_name }}"
+          else
+            BRANCH_NAME="${{ github.event.ref }}"
+          fi
+
+          # Sanitize branch name for folder (same logic as deploy)
+          SAFE_NAME=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g')
+          echo "preview_path=preview/${SAFE_NAME}" >> $GITHUB_OUTPUT
+          echo "branch_name=${BRANCH_NAME}" >> $GITHUB_OUTPUT
+          echo "Cleaning up preview for branch: ${BRANCH_NAME}"
+          echo "Preview path: preview/${SAFE_NAME}"
+
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+
+      - name: Remove preview folder
+        id: remove-preview
+        run: |
+          PREVIEW_PATH="${{ steps.branch-info.outputs.preview_path }}"
+
+          if [[ -d "${PREVIEW_PATH}" ]]; then
+            echo "Removing preview folder: ${PREVIEW_PATH}"
+            rm -rf "${PREVIEW_PATH}"
+
+            # Cleanup empty preview parent if no other previews exist
+            if [[ -d "preview" ]] && [[ -z "$(ls -A preview 2>/dev/null)" ]]; then
+              echo "Removing empty preview directory"
+              rm -rf "preview"
+            fi
+
+            echo "cleanup_needed=true" >> $GITHUB_OUTPUT
+          else
+            echo "Preview folder not found: ${PREVIEW_PATH}"
+            echo "cleanup_needed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push cleanup
+        if: steps.remove-preview.outputs.cleanup_needed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH_NAME="${{ steps.branch-info.outputs.branch_name }}"
+          git add -A
+          git commit -m "chore: remove preview for deleted branch ${BRANCH_NAME}"
+          git push
+
+      - name: Output cleanup result
+        run: |
+          if [[ "${{ steps.remove-preview.outputs.cleanup_needed }}" == "true" ]]; then
+            echo "## Preview cleaned up successfully" >> $GITHUB_STEP_SUMMARY
+            echo "Removed preview for branch: ${{ steps.branch-info.outputs.branch_name }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## No cleanup needed" >> $GITHUB_STEP_SUMMARY
+            echo "Preview folder did not exist for branch: ${{ steps.branch-info.outputs.branch_name }}" >> $GITHUB_STEP_SUMMARY
+          fi
