@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 'preview/**'  # Deploy branches matching preview/* pattern
+      - '**'  # Deploy previews for all branches
   pull_request:
     branches:
       - main
