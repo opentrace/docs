@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-      - 'preview/**'  # Deploy branches matching preview/* pattern
+      - '**'  # Deploy previews for all branches
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       branch:
@@ -55,7 +58,7 @@ jobs:
         run: mkdocs build
 
       - name: Deploy to GitHub Pages (main)
-        if: steps.deploy-type.outputs.type == 'main'
+        if: github.ref_name == 'main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -63,7 +66,7 @@ jobs:
           keep_files: true  # Keep preview folders when deploying main
 
       - name: Deploy to GitHub Pages (preview)
-        if: steps.deploy-type.outputs.type == 'preview'
+        if: github.ref_name != 'main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +77,10 @@ jobs:
       - name: Output deployment URL
         run: |
           BASE_URL="https://opentrace.github.io/docs"
-          if [[ "${{ steps.deploy-type.outputs.type }}" == "main" ]]; then
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "## Build successful" >> $GITHUB_STEP_SUMMARY
+            echo "This is a PR build - no deployment. Merge to main to deploy." >> $GITHUB_STEP_SUMMARY
+          elif [[ "${{ steps.deploy-type.outputs.type }}" == "main" ]]; then
             echo "## Deployed to: ${BASE_URL}" >> $GITHUB_STEP_SUMMARY
           else
             PREVIEW_PATH="${{ steps.deploy-type.outputs.preview_path }}"
