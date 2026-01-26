@@ -13,11 +13,23 @@
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://opentrace.github.io/docs/workflows/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://opentrace.github.io/docs/integrations/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
-         <loc>https://opentrace.github.io/docs/workflows/</loc>
+         <loc>https://opentrace.github.io/docs/integrations/aws-eks/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://opentrace.github.io/docs/integrations/github/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://opentrace.github.io/docs/integrations/gitlab/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
 </urlset>

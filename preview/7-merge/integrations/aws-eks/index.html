@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://opentrace.github.io/docs/integrations/">
+        <link rel="canonical" href="https://opentrace.github.io/docs/integrations/aws-eks/">
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../gitlab/">
       
       
-        <link rel="next" href="github/">
+        <link rel="next" href="../../capabilities/">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Integrations - OpenTrace Documentation</title>
+        <title>AWS EKS - OpenTrace Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrations" class="md-skip">
+        <a href="#aws-eks" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OpenTrace Documentation" class="md-header__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
+    <a href="../.." title="OpenTrace Documentation" class="md-header__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Integrations
+              AWS EKS
             
           </span>
         </div>
@@ -229,9 +229,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OpenTrace Documentation" class="md-nav__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
+    <a href="../.." title="OpenTrace Documentation" class="md-nav__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     OpenTrace Documentation
@@ -258,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -363,37 +363,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Integrations
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -409,87 +382,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#available-integrations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Integrations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connection-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connection Issues
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#refreshing-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Refreshing Data
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-an-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Disconnecting an Integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -502,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="github/" class="md-nav__link">
+      <a href="../github/" class="md-nav__link">
         
   
   
@@ -530,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gitlab/" class="md-nav__link">
+      <a href="../gitlab/" class="md-nav__link">
         
   
   
@@ -555,10 +447,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="aws-eks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS EKS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -574,6 +493,109 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-an-iam-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create an IAM Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-an-iam-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create an IAM Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-eks-access-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Configure EKS Access Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-connect-in-opentrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Connect in OpenTrace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Gets Collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -593,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capabilities/" class="md-nav__link">
+      <a href="../../capabilities/" class="md-nav__link">
         
   
   
@@ -620,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workflows/" class="md-nav__link">
+      <a href="../../workflows/" class="md-nav__link">
         
   
   
@@ -667,10 +689,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#available-integrations" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Available Integrations
+        Prerequisites
       
     </span>
   </a>
@@ -678,22 +700,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#setup-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Setup Steps
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Troubleshooting">
+    <nav class="md-nav" aria-label="Setup Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#connection-issues" class="md-nav__link">
+  <a href="#step-1-create-an-iam-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Connection Issues
+        Step 1: Create an IAM Policy
       
     </span>
   </a>
@@ -701,10 +723,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#refreshing-data" class="md-nav__link">
+  <a href="#step-2-create-an-iam-role" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Refreshing Data
+        Step 2: Create an IAM Role
       
     </span>
   </a>
@@ -712,10 +734,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#disconnecting-an-integration" class="md-nav__link">
+  <a href="#step-3-configure-eks-access-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disconnecting an Integration
+        Step 3: Configure EKS Access Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-connect-in-opentrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Connect in OpenTrace
       
     </span>
   </a>
@@ -724,6 +757,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Gets Collected
+      
+    </span>
+  </a>
   
 </li>
       
@@ -747,65 +791,86 @@
   
 
 
-<h1 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h1>
-<p>OpenTrace connects to your existing tools and infrastructure to build a complete picture of your system.</p>
-<h2 id="available-integrations">Available Integrations<a class="headerlink" href="#available-integrations" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Integration</th>
-<th>Type</th>
-<th>What It Provides</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="github/">GitHub</a></td>
-<td>OAuth</td>
-<td>Repository data, issues, code analysis</td>
-</tr>
-<tr>
-<td><a href="gitlab/">GitLab</a></td>
-<td>OAuth</td>
-<td>Repository data, issues, code analysis</td>
-</tr>
-<tr>
-<td><a href="aws-eks/">AWS EKS</a></td>
-<td>IAM Role</td>
-<td>Kubernetes cluster topology and resources</td>
-</tr>
-</tbody>
-</table>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="connection-issues">Connection Issues<a class="headerlink" href="#connection-issues" title="Permanent link">&para;</a></h3>
-<p><strong>OAuth integrations (GitHub, GitLab)</strong></p>
+<h1 id="aws-eks">AWS EKS<a class="headerlink" href="#aws-eks" title="Permanent link">&para;</a></h1>
+<p>Connect your AWS EKS clusters to analyze Kubernetes resources, deployments, and service topology.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ensure pop-ups are not blocked in your browser</li>
-<li>Check that you have the required permissions</li>
-<li>Try disconnecting and reconnecting</li>
+<li>An AWS account with EKS clusters</li>
+<li>Permissions to create IAM roles and policies</li>
+<li>Access to configure EKS cluster access entries</li>
 </ul>
-<p><strong>AWS EKS</strong></p>
+<h2 id="setup-steps">Setup Steps<a class="headerlink" href="#setup-steps" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-an-iam-policy">Step 1: Create an IAM Policy<a class="headerlink" href="#step-1-create-an-iam-policy" title="Permanent link">&para;</a></h3>
+<p>Create a custom IAM policy with the following permissions:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="s2">&quot;eks:DescribeCluster&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="s2">&quot;eks:ListClusters&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="s2">&quot;eks:AccessKubernetesApi&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="p">],</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="step-2-create-an-iam-role">Step 2: Create an IAM Role<a class="headerlink" href="#step-2-create-an-iam-role" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Create a new IAM role for web identity federation</li>
+<li>Configure the trust relationship to allow OpenTrace to assume the role:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;Federated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accounts.google.com&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sts:AssumeRoleWithWebIdentity&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">&quot;Condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="nt">&quot;StringEquals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">          </span><span class="nt">&quot;accounts.google.com:aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YOUR_OPENTRACE_CLIENT_ID&quot;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Attach the policy created in Step 1 to this role</li>
+<li>Note the Role ARN for the next steps</li>
+</ol>
+<h3 id="step-3-configure-eks-access-entries">Step 3: Configure EKS Access Entries<a class="headerlink" href="#step-3-configure-eks-access-entries" title="Permanent link">&para;</a></h3>
+<p>For each EKS cluster you want to connect:</p>
+<ol>
+<li>Go to your EKS cluster in the AWS Console</li>
+<li>Navigate to <strong>Access</strong> &gt; <strong>Access entries</strong></li>
+<li>Click <strong>Create access entry</strong></li>
+<li>Enter the IAM Role ARN from Step 2</li>
+<li>Add the <code>AmazonEKSViewPolicy</code> access policy</li>
+</ol>
+<h3 id="step-4-connect-in-opentrace">Step 4: Connect in OpenTrace<a class="headerlink" href="#step-4-connect-in-opentrace" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navigate to <strong>Integrations &gt; AWS EKS</strong> in the OpenTrace UI</li>
+<li>Enter your IAM Role ARN</li>
+<li>Add your EKS cluster details (name and region)</li>
+<li>Click <strong>Connect</strong></li>
+</ol>
+<h2 id="what-gets-collected">What Gets Collected<a class="headerlink" href="#what-gets-collected" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Verify the IAM role trust relationship is correctly configured</li>
-<li>Ensure EKS access entries are created for each cluster</li>
-<li>Check that the role has the required permissions</li>
+<li>Cluster configuration</li>
+<li>Namespace and deployment information</li>
+<li>Service topology</li>
+<li>Pod and container status</li>
+<li>Resource relationships</li>
 </ul>
-<h3 id="refreshing-data">Refreshing Data<a class="headerlink" href="#refreshing-data" title="Permanent link">&para;</a></h3>
-<p>Most integrations sync automatically. To force a refresh:</p>
-<ol>
-<li>Go to the integration's management page</li>
-<li>Click the <strong>Sync</strong> button</li>
-<li>Wait for the sync to complete</li>
-</ol>
-<h3 id="disconnecting-an-integration">Disconnecting an Integration<a class="headerlink" href="#disconnecting-an-integration" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Navigate to the integration page</li>
-<li>Click <strong>Disconnect</strong></li>
-<li>Confirm the disconnection</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Disconnecting an integration removes synced data from OpenTrace but does not affect your external service.</p>
+<div class="admonition warning">
+<p class="admonition-title">Data Collection</p>
+<p>OpenTrace collects Kubernetes resource metadata only. No sensitive data like secrets or environment variables are accessed.</p>
 </div>
 
 
@@ -904,10 +969,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

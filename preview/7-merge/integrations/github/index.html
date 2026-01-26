@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://opentrace.github.io/docs/integrations/">
+        <link rel="canonical" href="https://opentrace.github.io/docs/integrations/github/">
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="github/">
+        <link rel="next" href="../gitlab/">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Integrations - OpenTrace Documentation</title>
+        <title>GitHub - OpenTrace Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrations" class="md-skip">
+        <a href="#github" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OpenTrace Documentation" class="md-header__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
+    <a href="../.." title="OpenTrace Documentation" class="md-header__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Integrations
+              GitHub
             
           </span>
         </div>
@@ -229,9 +229,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OpenTrace Documentation" class="md-nav__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
+    <a href="../.." title="OpenTrace Documentation" class="md-nav__button md-logo" aria-label="OpenTrace Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     OpenTrace Documentation
@@ -258,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -363,6 +363,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -382,7 +410,7 @@
   <span class="md-ellipsis">
     
   
-    Integrations
+    GitHub
   
 
     
@@ -400,7 +428,7 @@
   <span class="md-ellipsis">
     
   
-    Integrations
+    GitHub
   
 
     
@@ -426,10 +454,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#available-integrations" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Available Integrations
+        Prerequisites
       
     </span>
   </a>
@@ -437,52 +465,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#setup-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connection-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connection Issues
+        Setup Steps
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#refreshing-data" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-synced" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Refreshing Data
+        What Gets Synced
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-an-integration" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#permissions-required" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disconnecting an Integration
+        Permissions Required
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -502,35 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="github/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GitHub
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="gitlab/" class="md-nav__link">
+      <a href="../gitlab/" class="md-nav__link">
         
   
   
@@ -558,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="aws-eks/" class="md-nav__link">
+      <a href="../aws-eks/" class="md-nav__link">
         
   
   
@@ -593,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../capabilities/" class="md-nav__link">
+      <a href="../../capabilities/" class="md-nav__link">
         
   
   
@@ -620,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workflows/" class="md-nav__link">
+      <a href="../../workflows/" class="md-nav__link">
         
   
   
@@ -667,10 +650,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#available-integrations" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Available Integrations
+        Prerequisites
       
     </span>
   </a>
@@ -678,52 +661,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#setup-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connection-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connection Issues
+        Setup Steps
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#refreshing-data" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-synced" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Refreshing Data
+        What Gets Synced
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting-an-integration" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#permissions-required" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disconnecting an Integration
+        Permissions Required
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -747,66 +713,34 @@
   
 
 
-<h1 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h1>
-<p>OpenTrace connects to your existing tools and infrastructure to build a complete picture of your system.</p>
-<h2 id="available-integrations">Available Integrations<a class="headerlink" href="#available-integrations" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Integration</th>
-<th>Type</th>
-<th>What It Provides</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="github/">GitHub</a></td>
-<td>OAuth</td>
-<td>Repository data, issues, code analysis</td>
-</tr>
-<tr>
-<td><a href="gitlab/">GitLab</a></td>
-<td>OAuth</td>
-<td>Repository data, issues, code analysis</td>
-</tr>
-<tr>
-<td><a href="aws-eks/">AWS EKS</a></td>
-<td>IAM Role</td>
-<td>Kubernetes cluster topology and resources</td>
-</tr>
-</tbody>
-</table>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="connection-issues">Connection Issues<a class="headerlink" href="#connection-issues" title="Permanent link">&para;</a></h3>
-<p><strong>OAuth integrations (GitHub, GitLab)</strong></p>
+<h1 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h1>
+<p>Connect GitHub to sync repository data and analyze code structure.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ensure pop-ups are not blocked in your browser</li>
-<li>Check that you have the required permissions</li>
-<li>Try disconnecting and reconnecting</li>
+<li>A GitHub account with access to the repositories you want to connect</li>
+<li>Admin access to install GitHub Apps (for organization repositories)</li>
 </ul>
-<p><strong>AWS EKS</strong></p>
+<h2 id="setup-steps">Setup Steps<a class="headerlink" href="#setup-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Navigate to <strong>Integrations &gt; GitHub</strong> in the OpenTrace UI</li>
+<li>Click <strong>Connect GitHub</strong></li>
+<li>You'll be redirected to GitHub to authorize the OpenTrace GitHub App</li>
+<li>Select the repositories or organizations you want to connect</li>
+<li>Click <strong>Authorize</strong> to complete the OAuth flow</li>
+</ol>
+<h2 id="what-gets-synced">What Gets Synced<a class="headerlink" href="#what-gets-synced" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Verify the IAM role trust relationship is correctly configured</li>
-<li>Ensure EKS access entries are created for each cluster</li>
-<li>Check that the role has the required permissions</li>
+<li>Repository structure and files</li>
+<li>Code symbols and dependencies</li>
+<li>Issues</li>
 </ul>
-<h3 id="refreshing-data">Refreshing Data<a class="headerlink" href="#refreshing-data" title="Permanent link">&para;</a></h3>
-<p>Most integrations sync automatically. To force a refresh:</p>
-<ol>
-<li>Go to the integration's management page</li>
-<li>Click the <strong>Sync</strong> button</li>
-<li>Wait for the sync to complete</li>
-</ol>
-<h3 id="disconnecting-an-integration">Disconnecting an Integration<a class="headerlink" href="#disconnecting-an-integration" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Navigate to the integration page</li>
-<li>Click <strong>Disconnect</strong></li>
-<li>Confirm the disconnection</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Disconnecting an integration removes synced data from OpenTrace but does not affect your external service.</p>
-</div>
+<h2 id="permissions-required">Permissions Required<a class="headerlink" href="#permissions-required" title="Permanent link">&para;</a></h2>
+<p>OpenTrace requests read-only access to:</p>
+<ul>
+<li>Repository contents</li>
+<li>Issues</li>
+<li>Organization membership (for org repos)</li>
+</ul>
 
 
 
@@ -904,10 +838,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
