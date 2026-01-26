@@ -57,6 +57,10 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
-  - Integrations: integrations.md
+  - Integrations:
+    - integrations/index.md
+    - GitHub: integrations/github.md
+    - GitLab: integrations/gitlab.md
+    - AWS EKS: integrations/aws-eks.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md

@@ -22,7 +22,7 @@ Connect OpenTrace to your AI assistant and start asking questions:
 
     Setup OpenTrace and run your first queries
 
-- **[Integrations](integrations.md)**
+- **[Integrations](integrations/index.md)**
 
     Connect GitHub, GitLab, and AWS EKS
 
