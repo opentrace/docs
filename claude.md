@@ -57,7 +57,7 @@ Branch names are sanitized for the URL path - non-alphanumeric characters (excep
 
 ### Cleanup
 
-Preview deployments are automatically cleaned up when their corresponding branch is deleted. Manual cleanup can also be triggered via the "Cleanup Preview Deployment" workflow if needed.
+Preview deployments are automatically cleaned up when their corresponding PR is closed (merged or not). Manual cleanup can also be triggered via the "Cleanup Preview Deployment" workflow if needed.
 
 ## Deployment Workflows
 
@@ -68,5 +68,5 @@ Preview deployments are automatically cleaned up when their corresponding branch
 - Other branches: preview deployment in `preview/<branch>/` subfolder
 
 ### `cleanup-preview.yml`
-- Triggers on: any branch deletion, manual dispatch
-- Removes preview folders from gh-pages when branches are deleted
+- Triggers on: PR closed, manual dispatch
+- Removes preview folders from gh-pages when PRs are closed

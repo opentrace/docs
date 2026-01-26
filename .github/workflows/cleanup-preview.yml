@@ -1,12 +1,12 @@
 name: Cleanup Preview Deployment
 
 on:
-  delete:
-    # Triggers when any branch is deleted
+  pull_request:
+    types: [closed]
   workflow_dispatch:
     inputs:
       branch_name:
-        description: 'Branch name to cleanup (e.g., preview/my-feature)'
+        description: 'Branch name to cleanup (e.g., feature/my-feature)'
         required: true
         type: string
 
@@ -19,8 +19,6 @@ concurrency:
 
 jobs:
   cleanup:
-    # Run for any deleted branch (skip tag deletions) or manual dispatch
-    if: github.event.ref_type == 'branch' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Determine branch to cleanup
@@ -29,7 +27,7 @@ jobs:
           if [[ -n "${{ github.event.inputs.branch_name }}" ]]; then
             BRANCH_NAME="${{ github.event.inputs.branch_name }}"
           else
-            BRANCH_NAME="${{ github.event.ref }}"
+            BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
           fi
 
           # Sanitize branch name for folder (same logic as deploy)
@@ -74,7 +72,7 @@ jobs:
 
           BRANCH_NAME="${{ steps.branch-info.outputs.branch_name }}"
           git add -A
-          git commit -m "chore: remove preview for deleted branch ${BRANCH_NAME}"
+          git commit -m "chore: remove preview for closed PR (${BRANCH_NAME})"
           git push
 
       - name: Output cleanup result
