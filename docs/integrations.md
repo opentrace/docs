@@ -6,8 +6,8 @@ OpenTrace connects to your existing tools and infrastructure to build a complete
 
 | Integration | Type | What It Provides |
 |-------------|------|------------------|
-| [GitHub](#github) | OAuth | Repository data, issues, PRs, code analysis |
-| [GitLab](#gitlab) | OAuth | Repository data, issues, MRs, code analysis |
+| [GitHub](#github) | OAuth | Repository data, issues, code analysis |
+| [GitLab](#gitlab) | OAuth | Repository data, issues, code analysis |
 | [AWS EKS](#aws-eks) | IAM Role | Kubernetes cluster topology and resources |
 
 ---
@@ -33,16 +33,14 @@ Connect GitHub to sync repository data, analyze code structure, and track issues
 
 - Repository structure and files
 - Code symbols and dependencies
-- Issues and pull requests
-- Commit history
-- Branch information
+- Issues
 
 ### Permissions Required
 
 OpenTrace requests read-only access to:
 
 - Repository contents
-- Issues and pull requests
+- Issues
 - Organization membership (for org repos)
 
 ---
@@ -68,8 +66,7 @@ Connect GitLab to sync repository data, analyze code, and track issues and merge
 
 - Project structure and files
 - Code symbols and dependencies
-- Issues and merge requests
-- CI/CD pipeline information
+- Issues
 
 ### Self-Hosted GitLab
 
