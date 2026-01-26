@@ -1,5 +1,8 @@
 # AWS EKS
 
+!!! info "Early Access"
+    This integration is in early access. Features and configuration may change.
+
 Connect your AWS EKS clusters to analyze Kubernetes resources, deployments, and service topology.
 
 ## Prerequisites

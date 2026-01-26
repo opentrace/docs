@@ -4,11 +4,11 @@ OpenTrace connects to your existing tools and infrastructure to build a complete
 
 ## Available Integrations
 
-| Integration | Type | What It Provides |
-|-------------|------|------------------|
-| [GitHub](github.md) | OAuth | Repository data, issues, code analysis |
-| [GitLab](gitlab.md) | OAuth | Repository data, issues, code analysis |
-| [AWS EKS](aws-eks.md) | IAM Role | Kubernetes cluster topology and resources |
+| Integration | Type | What It Provides | Status |
+|-------------|------|------------------|--------|
+| [GitHub](github.md) | OAuth | Repository data, issues, code analysis | |
+| [GitLab](gitlab.md) | OAuth | Repository data, issues, code analysis | |
+| [AWS EKS](aws-eks.md) | IAM Role | Kubernetes cluster topology and resources | Early Access |
 
 ## Troubleshooting
 

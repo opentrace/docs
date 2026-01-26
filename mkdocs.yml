@@ -61,6 +61,6 @@ nav:
     - integrations/index.md
     - GitHub: integrations/github.md
     - GitLab: integrations/gitlab.md
-    - AWS EKS: integrations/aws-eks.md
+    - AWS EKS (Early Access): integrations/aws-eks.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md
