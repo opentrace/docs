@@ -24,7 +24,7 @@ Connect OpenTrace to your AI assistant and start asking questions:
 
 - **[Integrations](integrations.md)**
 
-    Connect GitHub, Slack, AWS EKS, Grafana, and more
+    Connect GitHub, GitLab, and AWS EKS
 
 - **[What You Can Do](capabilities.md)**
 
