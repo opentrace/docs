@@ -56,6 +56,15 @@ markdown_extensions:
   - toc:
       permalink: true
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/opentrace
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/opentraceai
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/opentraceai/
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
