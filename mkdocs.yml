@@ -13,20 +13,22 @@ repo_url: https://github.com/opentrace/docs
 
 theme:
   name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.ico
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: deep orange
+      accent: orange
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: deep orange
+      accent: orange
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -53,6 +55,15 @@ markdown_extensions:
   - pymdownx.snippets
   - toc:
       permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/opentrace
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/opentraceai
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/opentraceai/
 
 nav:
   - Home: index.md
