@@ -84,6 +84,12 @@ No write access is required. OpenTrace only reads trace data from Tempo.
 - All communication with Tempo uses HTTPS (recommended)
 - OpenTrace does not modify or delete any data in Tempo
 
+## Grafana Cloud Users
+
+If you're using Grafana Cloud Traces, you can also configure the Tempo MCP server to enable AI-powered trace exploration directly in your development tools. This allows natural language queries against your tracing data for diagnostics and performance optimization.
+
+For setup instructions, see [Configure the MCP server for your AI tool](https://grafana.com/docs/grafana-cloud/send-data/traces/mcp-server/#configure-the-mcp-server-for-your-ai-tool) in the Grafana Cloud documentation.
+
 ## Troubleshooting
 
 ### Connection Failed
