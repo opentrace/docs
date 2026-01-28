@@ -11,11 +11,84 @@ By connecting OpenTrace to Claude Code, you give Claude access to your system's 
 ## Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and configured
-- An OpenTrace account with an API token
+- An OpenTrace account
 
 ## Setup Steps
 
-### 1. Get Your API Token
+OpenTrace supports two authentication methods for Claude Code:
+
+| Method | Best For |
+|--------|----------|
+| [OAuth Flow](#method-a-oauth-flow-recommended) | Personal use, quick setup, automatic token refresh |
+| [API Token](#method-b-api-token) | CI/CD, shared configurations, service accounts |
+
+### Method A: OAuth Flow (Recommended)
+
+OAuth lets you authenticate through your browser without manually managing tokens.
+
+#### 1. Configure MCP with OAuth
+
+Add the OpenTrace server to your Claude Code configuration with OAuth authentication.
+
+**Project-level** (`.mcp.json` in your project root):
+
+```json
+{
+  "mcpServers": {
+    "opentrace": {
+      "type": "http",
+      "url": "https://api.opentrace.ai/mcp/v1/oauth"
+    }
+  }
+}
+```
+
+**Global** (`~/.claude/settings.json` on macOS/Linux or `%USERPROFILE%\.claude\settings.json` on Windows):
+
+```json
+{
+  "mcpServers": {
+    "opentrace": {
+      "type": "http",
+      "url": "https://api.opentrace.ai/mcp/v1/oauth"
+    }
+  }
+}
+```
+
+#### 2. Authenticate
+
+Start Claude Code:
+
+```bash
+claude
+```
+
+When you first use an OpenTrace tool, Claude Code will prompt you to authenticate:
+
+1. A browser window opens automatically
+2. Log in to your OpenTrace account (or confirm if already logged in)
+3. Authorize Claude Code to access your organization
+4. Return to your terminal - authentication is complete
+
+!!! tip
+    Your OAuth session persists across Claude Code sessions. You'll only need to re-authenticate if your session expires or you revoke access.
+
+#### 3. Verify the Connection
+
+Ask Claude to verify the connection:
+
+> "What services are available in OpenTrace?"
+
+If configured correctly, Claude will be able to query your system architecture.
+
+---
+
+### Method B: API Token
+
+Use API tokens for service accounts, CI/CD pipelines, or shared team configurations.
+
+#### 1. Get Your API Token
 
 1. Log in to the [OpenTrace dashboard](https://app.opentrace.ai)
 2. Click on the **Organization Switcher** in the sidebar
@@ -28,7 +101,7 @@ By connecting OpenTrace to Claude Code, you give Claude access to your system's 
 !!! warning
     The token is only displayed once. Make sure to copy it before closing the dialog.
 
-### 2. Configure MCP
+#### 2. Configure MCP
 
 Claude Code uses MCP (Model Context Protocol) configuration files to connect to external services. You can configure OpenTrace at the project level or globally.
 
@@ -95,7 +168,7 @@ Edit `~/.claude/settings.json`:
 
 Edit `%USERPROFILE%\.claude\settings.json` with the same configuration.
 
-### 3. Verify the Connection
+#### 3. Verify the Connection
 
 Start Claude Code in your terminal:
 
@@ -153,11 +226,30 @@ What are the most critical services in terms of dependencies?
 - Check that the JSON syntax is valid
 - Restart Claude Code after making configuration changes
 
+### OAuth Browser Doesn't Open
+
+- Check that your default browser is configured correctly
+- Try manually opening the authorization URL shown in the terminal
+- Ensure pop-ups are not blocked for `app.opentrace.ai`
+
+### OAuth Session Expired
+
+- Re-authenticate by running any OpenTrace query - Claude Code will prompt you to log in again
+- If issues persist, remove the cached OAuth tokens and restart Claude Code
+
 ### "Unauthorized" Error
+
+**For API Token authentication:**
 
 - Verify your API token is correct
 - Check that the token hasn't expired
 - Ensure the environment variable is set if using `${OPENTRACE_API_TOKEN}`
+
+**For OAuth authentication:**
+
+- Your session may have expired - try re-authenticating
+- Verify you authorized the correct OpenTrace organization
+- Check that your OpenTrace account has access to the organization
 
 ### No Data Returned
 
