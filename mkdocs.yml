@@ -70,6 +70,7 @@ nav:
   - Getting Started: getting-started.md
   - Integrations:
     - integrations/index.md
+    - Claude Code: integrations/claude-code.md
     - GitHub: integrations/github.md
     - GitLab: integrations/gitlab.md
     - AWS EKS (Early Access): integrations/aws-eks.md

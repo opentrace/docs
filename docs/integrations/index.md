@@ -2,7 +2,13 @@
 
 OpenTrace connects to your existing tools and infrastructure to build a complete picture of your system.
 
-## Available Integrations
+## AI Assistants
+
+| Integration | Type | What It Provides |
+|-------------|------|------------------|
+| [Claude Code](claude-code.md) | MCP | Architecture knowledge for Claude Code CLI |
+
+## Data Sources
 
 | Integration | Type | What It Provides | Status |
 |-------------|------|------------------|--------|
