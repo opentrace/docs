@@ -15,6 +15,7 @@ OpenTrace connects to your existing tools and infrastructure to build a complete
 | [GitHub](github.md) | OAuth | Repository data, issues, code analysis | |
 | [GitLab](gitlab.md) | OAuth | Repository data, issues, code analysis | |
 | [AWS EKS](aws-eks.md) | IAM Role | Kubernetes cluster topology and resources | Early Access |
+| [Grafana Tempo](tempo.md) | API Key | Distributed traces, service relationships | Early Access |
 
 ## Troubleshooting
 
@@ -31,6 +32,12 @@ OpenTrace connects to your existing tools and infrastructure to build a complete
 - Verify the IAM role trust relationship is correctly configured
 - Ensure EKS access entries are created for each cluster
 - Check that the role has the required permissions
+
+**Grafana Tempo**
+
+- Verify the Tempo URL is correct and accessible
+- Check that authentication credentials are valid (if required)
+- Ensure network connectivity allows access to your Tempo instance
 
 ### Refreshing Data
 

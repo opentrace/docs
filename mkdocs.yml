@@ -74,5 +74,6 @@ nav:
     - GitHub: integrations/github.md
     - GitLab: integrations/gitlab.md
     - AWS EKS (Early Access): integrations/aws-eks.md
+    - Grafana Tempo (Early Access): integrations/tempo.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md
