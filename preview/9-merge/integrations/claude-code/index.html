@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://opentrace.github.io/docs/integrations/tempo/">
+        <link rel="canonical" href="https://opentrace.github.io/docs/integrations/claude-code/">
       
       
-        <link rel="prev" href="../aws-eks/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../capabilities/">
+        <link rel="next" href="../github/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Grafana Tempo (Early Access) - OpenTrace Documentation</title>
+        <title>Claude Code - OpenTrace Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grafana-tempo" class="md-skip">
+        <a href="#claude-code" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grafana Tempo (Early Access)
+              Claude Code
             
           </span>
         </div>
@@ -391,10 +391,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -410,6 +437,209 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Claude Code?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-get-your-api-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Get Your API Token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configure MCP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configure MCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-project-level-configuration-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Project-Level Configuration (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-global-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Global Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verify-the-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Verify the Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Can Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-not-found-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "MCP server not found" Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unauthorized-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Unauthorized" Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-data-returned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Data Returned
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -503,37 +733,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Grafana Tempo (Early Access)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tempo/" class="md-nav__link">
         
   
   
@@ -549,225 +752,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup Steps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-get-your-tempo-endpoint-url" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Get Your Tempo Endpoint URL
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-prepare-authentication-if-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Prepare Authentication (If Required)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-connect-in-opentrace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Connect in OpenTrace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-verify-the-connection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Verify the Connection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-gets-synced" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Gets Synced
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sync-schedule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sync Schedule
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Permissions Required
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana-cloud-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Grafana Cloud Users
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connection-failed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connection Failed
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#authentication-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Authentication Errors
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#no-data-appearing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        No Data Appearing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sync-taking-too-long" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sync Taking Too Long
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -861,10 +845,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#what-is-claude-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        What is Claude Code?
       
     </span>
   </a>
@@ -895,10 +879,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-get-your-tempo-endpoint-url" class="md-nav__link">
+  <a href="#1-get-your-api-token" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Get Your Tempo Endpoint URL
+        1. Get Your API Token
       
     </span>
   </a>
@@ -906,10 +890,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-prepare-authentication-if-required" class="md-nav__link">
+  <a href="#2-configure-mcp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Prepare Authentication (If Required)
+        2. Configure MCP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configure MCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-project-level-configuration-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Project-Level Configuration (Recommended)
       
     </span>
   </a>
@@ -917,21 +913,26 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-connect-in-opentrace" class="md-nav__link">
+  <a href="#option-b-global-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Connect in OpenTrace
+        Option B: Global Configuration
       
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#step-4-verify-the-connection" class="md-nav__link">
+  <a href="#3-verify-the-connection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Verify the Connection
+        3. Verify the Connection
       
     </span>
   </a>
@@ -944,10 +945,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-gets-synced" class="md-nav__link">
+  <a href="#what-you-can-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Gets Synced
+        What You Can Do
       
     </span>
   </a>
@@ -955,43 +956,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sync-schedule" class="md-nav__link">
+  <a href="#example-queries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sync Schedule
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Permissions Required
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana-cloud-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Grafana Cloud Users
+        Example Queries
       
     </span>
   </a>
@@ -1011,10 +979,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#connection-failed" class="md-nav__link">
+  <a href="#mcp-server-not-found-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Connection Failed
+        "MCP server not found" Error
       
     </span>
   </a>
@@ -1022,10 +990,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#authentication-errors" class="md-nav__link">
+  <a href="#unauthorized-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication Errors
+        "Unauthorized" Error
       
     </span>
   </a>
@@ -1033,21 +1001,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#no-data-appearing" class="md-nav__link">
+  <a href="#no-data-returned" class="md-nav__link">
     <span class="md-ellipsis">
       
-        No Data Appearing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sync-taking-too-long" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sync Taking Too Long
+        No Data Returned
       
     </span>
   </a>
@@ -1056,6 +1013,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1079,102 +1047,141 @@
   
 
 
-<h1 id="grafana-tempo">Grafana Tempo<a class="headerlink" href="#grafana-tempo" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Early Access</p>
-<p>This integration is in early access. Features and configuration may change.</p>
-</div>
-<p>Connect your Grafana Tempo instance to analyze distributed traces and understand request flows across your services.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><a href="https://grafana.com/oss/tempo/">Grafana Tempo</a> is a high-volume, cost-effective distributed tracing backend. OpenTrace integrates with Tempo to import trace data, enabling you to correlate traces with your code, infrastructure, and issues for deeper system understanding.</p>
+<h1 id="claude-code">Claude Code<a class="headerlink" href="#claude-code" title="Permanent link">&para;</a></h1>
+<p>Connect OpenTrace to Claude Code to give your AI assistant deep knowledge about your system architecture.</p>
+<h2 id="what-is-claude-code">What is Claude Code?<a class="headerlink" href="#what-is-claude-code" title="Permanent link">&para;</a></h2>
+<p>Claude Code is Anthropic's official command-line interface for Claude. It enables Claude to understand your codebase, execute commands, and assist with software engineering tasks directly from your terminal.</p>
+<p>By connecting OpenTrace to Claude Code, you give Claude access to your system's architecture, service dependencies, and runtime relationships - enabling it to answer questions about your infrastructure and help debug issues.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>A running Grafana Tempo instance with HTTP API access</li>
-<li>Network connectivity from OpenTrace to your Tempo endpoint</li>
-<li>(Optional) Credentials if your Tempo instance requires authentication</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> installed and configured</li>
+<li>An OpenTrace account with an API token</li>
 </ul>
 <h2 id="setup-steps">Setup Steps<a class="headerlink" href="#setup-steps" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-get-your-tempo-endpoint-url">Step 1: Get Your Tempo Endpoint URL<a class="headerlink" href="#step-1-get-your-tempo-endpoint-url" title="Permanent link">&para;</a></h3>
-<p>Locate your Tempo query frontend or gateway endpoint URL. This is typically in the format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://tempo.your-domain.com
-</code></pre></div>
-<p>If you're running Tempo in Kubernetes, this might be exposed via an ingress or load balancer.</p>
-<h3 id="step-2-prepare-authentication-if-required">Step 2: Prepare Authentication (If Required)<a class="headerlink" href="#step-2-prepare-authentication-if-required" title="Permanent link">&para;</a></h3>
-<p>If your Tempo instance requires authentication, gather your credentials:</p>
-<ul>
-<li><strong>Username</strong>: Your Tempo authentication username</li>
-<li><strong>Password</strong>: Your Tempo authentication password</li>
-</ul>
-<p>OpenTrace uses HTTP Basic Authentication to connect to Tempo.</p>
-<h3 id="step-3-connect-in-opentrace">Step 3: Connect in OpenTrace<a class="headerlink" href="#step-3-connect-in-opentrace" title="Permanent link">&para;</a></h3>
+<h3 id="1-get-your-api-token">1. Get Your API Token<a class="headerlink" href="#1-get-your-api-token" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Navigate to <strong>Integrations &gt; Grafana Tempo</strong> in the OpenTrace UI</li>
-<li>Enter your Tempo instance URL</li>
-<li>(Optional) Enter your username and password if authentication is required</li>
-<li>Click <strong>Connect</strong></li>
+<li>Log in to the <a href="https://app.opentrace.ai">OpenTrace dashboard</a></li>
+<li>Click on the <strong>Organization Switcher</strong> in the sidebar</li>
+<li>Select <strong>Manage organization</strong> to open your organization profile</li>
+<li>Navigate to <strong>Service Accounts</strong></li>
+<li>Click <strong>Create Service Account</strong> and give it a name (e.g., "Claude Code")</li>
+<li>Click <strong>Generate Token</strong> on the service account you created</li>
+<li>Copy the token - you'll need it in the next step</li>
 </ol>
-<h3 id="step-4-verify-the-connection">Step 4: Verify the Connection<a class="headerlink" href="#step-4-verify-the-connection" title="Permanent link">&para;</a></h3>
-<p>After connecting, OpenTrace will perform an initial sync to verify the connection and begin importing trace data. You can monitor the sync status on the integration page.</p>
-<h2 id="what-gets-synced">What Gets Synced<a class="headerlink" href="#what-gets-synced" title="Permanent link">&para;</a></h2>
-<p>OpenTrace synchronizes the following trace data from Tempo:</p>
-<ul>
-<li><strong>Traces</strong>: Complete distributed traces showing request flows</li>
-<li><strong>Spans</strong>: Individual operation spans within traces</li>
-<li><strong>Service relationships</strong>: Service-to-service communication patterns derived from trace data</li>
-<li><strong>Operation metadata</strong>: Service names, operation names, and timing information</li>
-</ul>
-<p>This data is used to build a comprehensive view of your system's runtime behavior and service dependencies.</p>
-<h2 id="sync-schedule">Sync Schedule<a class="headerlink" href="#sync-schedule" title="Permanent link">&para;</a></h2>
-<p>After the initial sync, OpenTrace automatically synchronizes trace data on a configurable schedule. You can:</p>
-<ul>
-<li>View sync status and history on the integration page</li>
-<li>Manually trigger a sync using the <strong>Sync</strong> button</li>
-<li>Configure sync intervals in the Schedules tab</li>
-</ul>
-<h2 id="permissions-required">Permissions Required<a class="headerlink" href="#permissions-required" title="Permanent link">&para;</a></h2>
-<p>OpenTrace requires read access to your Tempo instance's HTTP API, specifically:</p>
-<ul>
-<li>Query API endpoints (<code>/api/traces/*</code>)</li>
-<li>Search API endpoints (if available)</li>
-</ul>
-<p>No write access is required. OpenTrace only reads trace data from Tempo.</p>
-<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
-<p class="admonition-title">Data Access</p>
-<p>OpenTrace accesses trace metadata and span information. If your traces contain sensitive data in span attributes or tags, ensure appropriate access controls are in place on your Tempo instance.</p>
+<p class="admonition-title">Warning</p>
+<p>The token is only displayed once. Make sure to copy it before closing the dialog.</p>
 </div>
+<h3 id="2-configure-mcp">2. Configure MCP<a class="headerlink" href="#2-configure-mcp" title="Permanent link">&para;</a></h3>
+<p>Claude Code uses MCP (Model Context Protocol) configuration files to connect to external services. You can configure OpenTrace at the project level or globally.</p>
+<h4 id="option-a-project-level-configuration-recommended">Option A: Project-Level Configuration (Recommended)<a class="headerlink" href="#option-a-project-level-configuration-recommended" title="Permanent link">&para;</a></h4>
+<p>Create a <code>.mcp.json</code> file in your project root:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;opentrace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.opentrace.ai/mcp/v1&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer YOUR_API_TOKEN&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>Replace <code>YOUR_API_TOKEN</code> with your OpenTrace API token.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use an environment variable to avoid committing your token:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;opentrace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.opentrace.ai/mcp/v1&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer ${OPENTRACE_API_TOKEN}&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div>
+Then set the environment variable: <code>export OPENTRACE_API_TOKEN=your_token_here</code></p>
+</div>
+<h4 id="option-b-global-configuration">Option B: Global Configuration<a class="headerlink" href="#option-b-global-configuration" title="Permanent link">&para;</a></h4>
+<p>To make OpenTrace available in all your Claude Code sessions, add the configuration to your global settings file.</p>
+<p><strong>macOS / Linux:</strong></p>
+<p>Edit <code>~/.claude/settings.json</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;opentrace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.opentrace.ai/mcp/v1&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer ${OPENTRACE_API_TOKEN}&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Windows:</strong></p>
+<p>Edit <code>%USERPROFILE%\.claude\settings.json</code> with the same configuration.</p>
+<h3 id="3-verify-the-connection">3. Verify the Connection<a class="headerlink" href="#3-verify-the-connection" title="Permanent link">&para;</a></h3>
+<p>Start Claude Code in your terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>claude
+</code></pre></div>
+<p>Ask Claude to verify the connection:</p>
+<blockquote>
+<p>"What services are available in OpenTrace?"</p>
+</blockquote>
+<p>If configured correctly, Claude will be able to query your system architecture.</p>
+<h2 id="what-you-can-do">What You Can Do<a class="headerlink" href="#what-you-can-do" title="Permanent link">&para;</a></h2>
+<p>Once connected, Claude can:</p>
 <ul>
-<li>Credentials are stored securely and encrypted at rest</li>
-<li>All communication with Tempo uses HTTPS (recommended)</li>
-<li>OpenTrace does not modify or delete any data in Tempo</li>
+<li><strong>Explore your architecture</strong> - Discover services, their relationships, and how they connect</li>
+<li><strong>Analyze dependencies</strong> - Understand what each service depends on and what depends on it</li>
+<li><strong>Investigate issues</strong> - Trace request paths, find connection points, and debug problems</li>
+<li><strong>Plan changes</strong> - Assess the impact of modifications before making them</li>
 </ul>
-<h2 id="grafana-cloud-users">Grafana Cloud Users<a class="headerlink" href="#grafana-cloud-users" title="Permanent link">&para;</a></h2>
-<p>If you're using Grafana Cloud Traces, you can also configure the Tempo MCP server to enable AI-powered trace exploration directly in your development tools. This allows natural language queries against your tracing data for diagnostics and performance optimization.</p>
-<p>For setup instructions, see <a href="https://grafana.com/docs/grafana-cloud/send-data/traces/mcp-server/#configure-the-mcp-server-for-your-ai-tool">Configure the MCP server for your AI tool</a> in the Grafana Cloud documentation.</p>
+<h2 id="example-queries">Example Queries<a class="headerlink" href="#example-queries" title="Permanent link">&para;</a></h2>
+<p>Try asking Claude:</p>
+<p><strong>Discovery:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>What services exist in my system?
+</code></pre></div></p>
+<p><strong>Dependencies:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>What does the payment service depend on?
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>What would be affected if the user-service goes down?
+</code></pre></div></p>
+<p><strong>Investigation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>How do requests flow from the API gateway to the database?
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Find the path between the frontend and the order service.
+</code></pre></div></p>
+<p><strong>Architecture:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Show me services that connect to the PostgreSQL database.
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>What are the most critical services in terms of dependencies?
+</code></pre></div></p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="connection-failed">Connection Failed<a class="headerlink" href="#connection-failed" title="Permanent link">&para;</a></h3>
+<h3 id="mcp-server-not-found-error">"MCP server not found" Error<a class="headerlink" href="#mcp-server-not-found-error" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Verify the Tempo URL is correct and accessible from OpenTrace</li>
-<li>Check that the URL uses the correct protocol (http/https)</li>
-<li>Ensure any firewalls or network policies allow traffic from OpenTrace</li>
+<li>Verify the <code>.mcp.json</code> file is in your project root or the global settings file exists</li>
+<li>Check that the JSON syntax is valid</li>
+<li>Restart Claude Code after making configuration changes</li>
 </ul>
-<h3 id="authentication-errors">Authentication Errors<a class="headerlink" href="#authentication-errors" title="Permanent link">&para;</a></h3>
+<h3 id="unauthorized-error">"Unauthorized" Error<a class="headerlink" href="#unauthorized-error" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Confirm your username and password are correct</li>
-<li>Verify your Tempo instance is configured to accept Basic Authentication</li>
-<li>Check for any IP allowlists that might be blocking access</li>
+<li>Verify your API token is correct</li>
+<li>Check that the token hasn't expired</li>
+<li>Ensure the environment variable is set if using <code>${OPENTRACE_API_TOKEN}</code></li>
 </ul>
-<h3 id="no-data-appearing">No Data Appearing<a class="headerlink" href="#no-data-appearing" title="Permanent link">&para;</a></h3>
+<h3 id="no-data-returned">No Data Returned<a class="headerlink" href="#no-data-returned" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Ensure your Tempo instance has trace data available</li>
-<li>Check the sync status for any error messages</li>
-<li>Verify that your Tempo instance is receiving traces from your applications</li>
+<li>Confirm you have integrations configured in OpenTrace (GitHub, GitLab, AWS EKS)</li>
+<li>Verify data has been synced from your integrations</li>
+<li>Check the OpenTrace dashboard to ensure your services are visible</li>
 </ul>
-<h3 id="sync-taking-too-long">Sync Taking Too Long<a class="headerlink" href="#sync-taking-too-long" title="Permanent link">&para;</a></h3>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Large trace volumes may require more time for initial sync</li>
-<li>Consider using service filters to limit the scope of synced data</li>
-<li>Check the Schedules tab for sync progress details</li>
+<li><a href="../../capabilities/">What You Can Do</a> - Full list of capabilities</li>
+<li><a href="../../workflows/">Example Workflows</a> - Common scenarios and approaches</li>
+<li><a href="../github/">GitHub Integration</a> - Connect your repositories</li>
 </ul>
 
 
