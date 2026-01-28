@@ -1033,10 +1033,17 @@
 <h3 id="1-get-your-api-token">1. Get Your API Token<a class="headerlink" href="#1-get-your-api-token" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Log in to the <a href="https://app.opentrace.ai">OpenTrace dashboard</a></li>
-<li>Navigate to <strong>Settings &gt; API Tokens</strong></li>
-<li>Click <strong>Generate Token</strong></li>
+<li>Click on the <strong>Organization Switcher</strong> in the sidebar</li>
+<li>Select <strong>Manage organization</strong> to open your organization profile</li>
+<li>Navigate to <strong>Service Accounts</strong></li>
+<li>Click <strong>Create Service Account</strong> and give it a name (e.g., "Claude Code")</li>
+<li>Click <strong>Generate Token</strong> on the service account you created</li>
 <li>Copy the token - you'll need it in the next step</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The token is only displayed once. Make sure to copy it before closing the dialog.</p>
+</div>
 <h3 id="2-configure-mcp">2. Configure MCP<a class="headerlink" href="#2-configure-mcp" title="Permanent link">&para;</a></h3>
 <p>Claude Code uses MCP (Model Context Protocol) configuration files to connect to external services. You can configure OpenTrace at the project level or globally.</p>
 <h4 id="option-a-project-level-configuration-recommended">Option A: Project-Level Configuration (Recommended)<a class="headerlink" href="#option-a-project-level-configuration-recommended" title="Permanent link">&para;</a></h4>
