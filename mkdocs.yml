@@ -73,6 +73,7 @@ nav:
     - AI Assistants:
       - Claude Code: integrations/claude-code.md
       - Claude Web: integrations/claude-web.md
+      - GitHub Copilot: integrations/github-copilot.md
     - Data Sources:
       - GitHub: integrations/github.md
       - GitLab: integrations/gitlab.md
