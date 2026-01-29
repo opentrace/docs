@@ -44,24 +44,29 @@ Create a `.vscode/mcp.json` file in your workspace root:
 Replace `YOUR_API_TOKEN` with your OpenTrace API token.
 
 !!! tip
-    Use an environment variable to avoid committing your token. Create a `.env` file in your workspace root:
-    ```
-    OPENTRACE_API_TOKEN=your_token_here
-    ```
-    Then reference it in your configuration:
+    Use an input variable to avoid committing your token:
     ```json
     {
+      "inputs": [
+        {
+          "type": "promptString",
+          "id": "opentrace-api-token",
+          "description": "OpenTrace API Token",
+          "password": true
+        }
+      ],
       "servers": {
         "opentrace": {
           "type": "http",
           "url": "https://api.opentrace.ai/mcp/v1",
           "headers": {
-            "Authorization": "Bearer ${OPENTRACE_API_TOKEN}"
+            "Authorization": "Bearer ${input:opentrace-api-token}"
           }
         }
       }
     }
     ```
+    VS Code will prompt you for the token when the MCP server is first activated.
 
 #### Option B: Global Configuration
 
@@ -79,18 +84,17 @@ To make OpenTrace available across all your VS Code workspaces, add the configur
       "type": "http",
       "url": "https://api.opentrace.ai/mcp/v1",
       "headers": {
-        "Authorization": "Bearer ${OPENTRACE_API_TOKEN}"
+        "Authorization": "Bearer YOUR_API_TOKEN"
       }
     }
   }
 }
 ```
 
-Set the environment variable in your shell profile (`.bashrc`, `.zshrc`, etc.):
+Replace `YOUR_API_TOKEN` with your OpenTrace API token.
 
-```bash
-export OPENTRACE_API_TOKEN=your_token_here
-```
+!!! note
+    Global settings do not support input variables for secrets. Consider using workspace configuration if you need to avoid storing the token in settings.
 
 ### 3. Verify the Connection
 
@@ -152,8 +156,8 @@ What are the most critical services in terms of dependencies?
 
 - Verify your API token is correct
 - Check that the token hasn't expired
-- Ensure the environment variable is set if using `${OPENTRACE_API_TOKEN}`
-- Restart VS Code after setting environment variables
+- If using input variables, try re-entering the token when prompted
+- Restart VS Code after making configuration changes
 
 ### No Data Returned
 
