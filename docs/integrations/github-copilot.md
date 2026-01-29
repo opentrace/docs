@@ -56,7 +56,7 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
           "type": "http",
           "url": "https://api.opentrace.ai/mcp/v1",
           "headers": {
-            "Authorization": "Bearer ${OPENTRACE_API_TOKEN}"
+            "Authorization": "Bearer ${env:OPENTRACE_API_TOKEN}"
           },
           "envFile": "${workspaceFolder}/.env"
         }
