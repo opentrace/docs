@@ -69,7 +69,7 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Integrations:
-    - integrations/index.md
+    - Overview: integrations/index.md
     - Claude Code: integrations/claude-code.md
     - GitHub: integrations/github.md
     - GitLab: integrations/gitlab.md
