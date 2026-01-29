@@ -34,7 +34,7 @@ By connecting OpenTrace to Claude Web, you give Claude access to your system's a
 2. Click on your profile icon in the bottom-left corner
 3. Select **Settings**
 4. Navigate to **Connectors** in the settings menu
-5. Click **Add Integration**
+5. Click **Add custom connector**
 6. Select **MCP Server** as the integration type
 7. Enter the following details:
     - **Name:** OpenTrace
