@@ -52,7 +52,8 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: docs/snippets
   - toc:
       permalink: true
 
@@ -69,10 +70,14 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Integrations:
-    - integrations/index.md
-    - Claude Code: integrations/claude-code.md
-    - GitHub: integrations/github.md
-    - GitLab: integrations/gitlab.md
-    - AWS EKS (Early Access): integrations/aws-eks.md
+    - Overview: integrations/index.md
+    - AI Assistants:
+      - Claude Code: integrations/claude-code.md
+      - Claude Web: integrations/claude-web.md
+      - GitHub Copilot: integrations/github-copilot.md
+    - Data Sources:
+      - GitHub: integrations/github.md
+      - GitLab: integrations/gitlab.md
+      - AWS EKS (Early Access): integrations/aws-eks.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md

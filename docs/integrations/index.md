@@ -1,4 +1,4 @@
-# Integrations
+# Overview
 
 OpenTrace connects to your existing tools and infrastructure to build a complete picture of your system.
 
