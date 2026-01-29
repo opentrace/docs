@@ -72,8 +72,9 @@ nav:
     - Overview: integrations/index.md
     - AI Assistants:
       - Claude Code: integrations/claude-code.md
-    - GitHub: integrations/github.md
-    - GitLab: integrations/gitlab.md
-    - AWS EKS (Early Access): integrations/aws-eks.md
+    - Data Sources:
+      - GitHub: integrations/github.md
+      - GitLab: integrations/gitlab.md
+      - AWS EKS (Early Access): integrations/aws-eks.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md
