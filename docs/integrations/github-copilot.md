@@ -44,29 +44,26 @@ Create a `.vscode/mcp.json` file in your workspace root:
 Replace `YOUR_API_TOKEN` with your OpenTrace API token.
 
 !!! tip
-    Use an input variable to avoid committing your token:
+    Use an environment file to avoid committing your token. Create a `.env` file in your workspace root:
+    ```
+    OPENTRACE_API_TOKEN=your_token_here
+    ```
+    Then reference it in your configuration:
     ```json
     {
-      "inputs": [
-        {
-          "type": "promptString",
-          "id": "opentrace-api-token",
-          "description": "OpenTrace API Token",
-          "password": true
-        }
-      ],
       "servers": {
         "opentrace": {
           "type": "http",
           "url": "https://api.opentrace.ai/mcp/v1",
           "headers": {
-            "Authorization": "Bearer ${input:opentrace-api-token}"
-          }
+            "Authorization": "Bearer ${OPENTRACE_API_TOKEN}"
+          },
+          "envFile": "${workspaceFolder}/.env"
         }
       }
     }
     ```
-    VS Code will prompt you for the token when the MCP server is first activated.
+    Make sure to add `.env` to your `.gitignore` file.
 
 #### Option B: Global Configuration
 
@@ -156,7 +153,7 @@ What are the most critical services in terms of dependencies?
 
 - Verify your API token is correct
 - Check that the token hasn't expired
-- If using input variables, try re-entering the token when prompted
+- If using `envFile`, ensure the `.env` file exists and contains the correct token
 - Restart VS Code after making configuration changes
 
 ### No Data Returned
