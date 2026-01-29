@@ -33,7 +33,7 @@ By connecting OpenTrace to Claude Web, you give Claude access to your system's a
 1. Go to [claude.ai](https://claude.ai) and sign in
 2. Click on your profile icon in the bottom-left corner
 3. Select **Settings**
-4. Navigate to **Integrations** in the settings menu
+4. Navigate to **Connectors** in the settings menu
 5. Click **Add Integration**
 6. Select **MCP Server** as the integration type
 7. Enter the following details:
