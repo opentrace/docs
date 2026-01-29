@@ -72,6 +72,7 @@ nav:
     - Overview: integrations/index.md
     - AI Assistants:
       - Claude Code: integrations/claude-code.md
+      - Claude Web: integrations/claude-web.md
     - Data Sources:
       - GitHub: integrations/github.md
       - GitLab: integrations/gitlab.md
