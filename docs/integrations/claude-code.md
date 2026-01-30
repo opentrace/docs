@@ -58,7 +58,39 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
     ```
     Then set the environment variable: `export OPENTRACE_API_TOKEN=your_token_here`
 
-#### Option B: Global Configuration
+#### Option B: Command-Line Configuration
+
+Use the `claude mcp add` command to configure OpenTrace directly from your terminal:
+
+```bash
+claude mcp add opentrace \
+  --transport http \
+  --url https://api.opentrace.ai/mcp/v1 \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+Replace `YOUR_API_TOKEN` with your OpenTrace API token.
+
+!!! tip
+    Use an environment variable to avoid exposing your token in shell history:
+    ```bash
+    claude mcp add opentrace \
+      --transport http \
+      --url https://api.opentrace.ai/mcp/v1 \
+      --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}"
+    ```
+
+By default, this adds the server to your project configuration. To add it globally (available in all sessions), use the `--scope` flag:
+
+```bash
+claude mcp add opentrace \
+  --transport http \
+  --url https://api.opentrace.ai/mcp/v1 \
+  --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}" \
+  --scope user
+```
+
+#### Option C: Global Configuration (Manual)
 
 To make OpenTrace available in all your Claude Code sessions, add the configuration to your global settings file.
 
@@ -141,6 +173,7 @@ What are the most critical services in terms of dependencies?
 - Verify the `.mcp.json` file is in your project root or the global settings file exists
 - Check that the JSON syntax is valid
 - Restart Claude Code after making configuration changes
+- Run `claude mcp list` to see all configured MCP servers
 
 ### "Unauthorized" Error
 
