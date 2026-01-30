@@ -573,10 +573,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-global-configuration" class="md-nav__link">
+  <a href="#option-b-command-line-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B: Global Configuration
+        Option B: Command-Line Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-global-configuration-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Global Configuration (Manual)
       
     </span>
   </a>
@@ -1057,10 +1068,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-global-configuration" class="md-nav__link">
+  <a href="#option-b-command-line-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B: Global Configuration
+        Option B: Command-Line Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-global-configuration-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Global Configuration (Manual)
       
     </span>
   </a>
@@ -1250,27 +1272,51 @@
 </code></pre></div>
 Then set the environment variable: <code>export OPENTRACE_API_TOKEN=your_token_here</code></p>
 </div>
-<h4 id="option-b-global-configuration">Option B: Global Configuration<a class="headerlink" href="#option-b-global-configuration" title="Permanent link">&para;</a></h4>
+<h4 id="option-b-command-line-configuration">Option B: Command-Line Configuration<a class="headerlink" href="#option-b-command-line-configuration" title="Permanent link">&para;</a></h4>
+<p>Use the <code>claude mcp add</code> command to configure OpenTrace directly from your terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>opentrace<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--transport<span class="w"> </span>http<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>https://api.opentrace.ai/mcp/v1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_TOKEN&quot;</span>
+</code></pre></div>
+<p>Replace <code>YOUR_API_TOKEN</code> with your OpenTrace API token.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use an environment variable to avoid exposing your token in shell history:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>opentrace<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--transport<span class="w"> </span>http<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>https://api.opentrace.ai/mcp/v1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="si">${</span><span class="nv">OPENTRACE_API_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div></p>
+</div>
+<p>By default, this adds the server to your user configuration (available in all sessions). To add it to a specific project only, use the <code>--scope</code> flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>opentrace<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--transport<span class="w"> </span>http<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>https://api.opentrace.ai/mcp/v1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="si">${</span><span class="nv">OPENTRACE_API_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--scope<span class="w"> </span>project
+</code></pre></div>
+<h4 id="option-c-global-configuration-manual">Option C: Global Configuration (Manual)<a class="headerlink" href="#option-c-global-configuration-manual" title="Permanent link">&para;</a></h4>
 <p>To make OpenTrace available in all your Claude Code sessions, add the configuration to your global settings file.</p>
 <p><strong>macOS / Linux:</strong></p>
 <p>Edit <code>~/.claude/settings.json</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;opentrace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.opentrace.ai/mcp/v1&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer ${OPENTRACE_API_TOKEN}&quot;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;opentrace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.opentrace.ai/mcp/v1&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer ${OPENTRACE_API_TOKEN}&quot;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Windows:</strong></p>
 <p>Edit <code>%USERPROFILE%\.claude\settings.json</code> with the same configuration.</p>
 <h3 id="3-verify-the-connection">3. Verify the Connection<a class="headerlink" href="#3-verify-the-connection" title="Permanent link">&para;</a></h3>
 <p>Start Claude Code in your terminal:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>claude
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>claude
 </code></pre></div>
 <p>Ask Claude to verify the connection:</p>
 <blockquote>
@@ -1288,19 +1334,19 @@ Then set the environment variable: <code>export OPENTRACE_API_TOKEN=your_token_h
 <h2 id="example-queries">Example Queries<a class="headerlink" href="#example-queries" title="Permanent link">&para;</a></h2>
 <p>Try asking Claude:</p>
 <p><strong>Discovery:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>What services exist in my system?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>What services exist in my system?
 </code></pre></div></p>
 <p><strong>Dependencies:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>What does the payment service depend on?
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>What would be affected if the user-service goes down?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>What does the payment service depend on?
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>What would be affected if the user-service goes down?
 </code></pre></div></p>
 <p><strong>Investigation:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>How do requests flow from the API gateway to the database?
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Find the path between the frontend and the order service.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>How do requests flow from the API gateway to the database?
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Find the path between the frontend and the order service.
 </code></pre></div></p>
 <p><strong>Architecture:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Show me services that connect to the PostgreSQL database.
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>What are the most critical services in terms of dependencies?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Show me services that connect to the PostgreSQL database.
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>What are the most critical services in terms of dependencies?
 </code></pre></div></p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="mcp-server-not-found-error">"MCP server not found" Error<a class="headerlink" href="#mcp-server-not-found-error" title="Permanent link">&para;</a></h3>
@@ -1308,6 +1354,7 @@ Then set the environment variable: <code>export OPENTRACE_API_TOKEN=your_token_h
 <li>Verify the <code>.mcp.json</code> file is in your project root or the global settings file exists</li>
 <li>Check that the JSON syntax is valid</li>
 <li>Restart Claude Code after making configuration changes</li>
+<li>Run <code>claude mcp list</code> to see all configured MCP servers</li>
 </ul>
 <h3 id="unauthorized-error">"Unauthorized" Error<a class="headerlink" href="#unauthorized-error" title="Permanent link">&para;</a></h3>
 <ul>
