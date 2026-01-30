@@ -1289,12 +1289,12 @@ Then set the environment variable: <code>export OPENTRACE_API_TOKEN=your_token_h
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="si">${</span><span class="nv">OPENTRACE_API_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div></p>
 </div>
-<p>By default, this adds the server to your project configuration. To add it globally (available in all sessions), use the <code>--scope</code> flag:</p>
+<p>By default, this adds the server to your user configuration (available in all sessions). To add it to a specific project only, use the <code>--scope</code> flag:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>opentrace<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--transport<span class="w"> </span>http<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>https://api.opentrace.ai/mcp/v1<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="si">${</span><span class="nv">OPENTRACE_API_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--scope<span class="w"> </span>user
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--scope<span class="w"> </span>project
 </code></pre></div>
 <h4 id="option-c-global-configuration-manual">Option C: Global Configuration (Manual)<a class="headerlink" href="#option-c-global-configuration-manual" title="Permanent link">&para;</a></h4>
 <p>To make OpenTrace available in all your Claude Code sessions, add the configuration to your global settings file.</p>
