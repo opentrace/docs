@@ -65,7 +65,7 @@ Use the `claude mcp add` command to configure OpenTrace directly from your termi
 ```bash
 claude mcp add opentrace \
   --transport http \
-  --url https://api.opentrace.ai/mcp/v1 \
+  https://api.opentrace.ai/mcp/v1 \
   --header "Authorization: Bearer YOUR_API_TOKEN"
 ```
 
@@ -76,7 +76,7 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
     ```bash
     claude mcp add opentrace \
       --transport http \
-      --url https://api.opentrace.ai/mcp/v1 \
+      https://api.opentrace.ai/mcp/v1 \
       --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}"
     ```
 
@@ -85,7 +85,7 @@ By default, this adds the server to your project configuration. To add it global
 ```bash
 claude mcp add opentrace \
   --transport http \
-  --url https://api.opentrace.ai/mcp/v1 \
+  https://api.opentrace.ai/mcp/v1 \
   --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}" \
   --scope user
 ```
