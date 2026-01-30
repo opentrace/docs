@@ -80,14 +80,14 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
       --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}"
     ```
 
-By default, this adds the server to your project configuration. To add it globally (available in all sessions), use the `--scope` flag:
+By default, this adds the server to your user configuration (available in all sessions). To add it to a specific project only, use the `--scope` flag:
 
 ```bash
 claude mcp add opentrace \
   --transport http \
   https://api.opentrace.ai/mcp/v1 \
   --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}" \
-  --scope user
+  --scope project
 ```
 
 #### Option C: Global Configuration (Manual)
