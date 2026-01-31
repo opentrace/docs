@@ -69,6 +69,7 @@ extra:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Service Accounts: service-accounts.md
   - Integrations:
     - Overview: integrations/index.md
     - AI Assistants:

@@ -10,3 +10,6 @@
 
 !!! warning
     The token is only displayed once. Make sure to copy it before closing the dialog.
+
+!!! tip
+    For detailed information about managing service accounts, including best practices and troubleshooting, see the [Service Accounts guide](../service-accounts.md).
