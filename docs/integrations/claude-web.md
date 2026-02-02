@@ -11,13 +11,11 @@ By connecting OpenTrace to Claude Web, you give Claude access to your system's a
 ## Prerequisites
 
 - A [Claude Pro, Team, or Enterprise](https://claude.ai) subscription (MCP integrations require a paid plan)
-- An OpenTrace account with an API token
+- An OpenTrace account
 
 ## Setup Steps
 
---8<-- "get-api-token.md"
-
-### 2. Configure the MCP Integration
+### 1. Add the OpenTrace Connector
 
 1. Go to [claude.ai](https://claude.ai) and sign in
 2. Click on your profile icon in the bottom-left corner
@@ -28,9 +26,21 @@ By connecting OpenTrace to Claude Web, you give Claude access to your system's a
 7. Enter the following details:
     - **Name:** OpenTrace
     - **URL:** `https://api.opentrace.ai/mcp/v1`
-    - **Authentication:** Bearer Token
-    - **Token:** Paste your OpenTrace API token
 8. Click **Save** to add the integration
+
+### 2. Authorize with OAuth
+
+After adding the connector, you'll be redirected to OpenTrace to authorize access:
+
+1. Sign in to OpenTrace if prompted
+2. Select the organization you want to connect
+3. Review and confirm the requested permissions
+4. Click **Authorize** to complete the connection
+
+Once authorized, you'll be returned to claude.ai automatically.
+
+!!! note
+    Claude Web uses OAuth for authentication. Your browser handles the authorization flow securely - no API tokens or manual configuration required.
 
 ### 3. Verify the Connection
 
@@ -87,11 +97,11 @@ What are the most critical services in terms of dependencies?
 - Check that you have a Claude Pro, Team, or Enterprise subscription
 - Try removing and re-adding the integration
 
-### "Unauthorized" Error
+### OAuth Authorization Failed
 
-- Verify your API token is correct
-- Check that the token hasn't expired
-- Generate a new token if necessary
+- Ensure pop-ups are not blocked in your browser
+- Check that you have access to the OpenTrace organization
+- Try disconnecting and reconnecting the integration
 
 ### No Data Returned
 

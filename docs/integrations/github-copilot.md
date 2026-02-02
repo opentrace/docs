@@ -13,17 +13,86 @@ By connecting OpenTrace to GitHub Copilot, you give it access to your system's a
 - [Visual Studio Code](https://code.visualstudio.com/) installed
 - [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) installed and configured
 - A GitHub Copilot subscription (Individual, Business, or Enterprise)
-- An OpenTrace account with an API token
+- An OpenTrace account
 
-## Setup Steps
+## Authentication Methods
 
---8<-- "get-api-token.md"
+OpenTrace supports two authentication methods for GitHub Copilot:
 
-### 2. Configure MCP in VS Code
+| Method | Best For | How It Works |
+|--------|----------|--------------|
+| **OAuth** (Recommended) | Interactive use by developers | Browser opens for authorization, tokens managed automatically |
+| **API Token** | Automation, CI/CD, headless environments | Service account token configured manually |
 
-GitHub Copilot in VS Code uses MCP (Model Context Protocol) to connect to external services. You can configure OpenTrace at the workspace level or globally.
+## Option A: OAuth Authentication (Recommended)
 
-#### Option A: Workspace Configuration (Recommended)
+OAuth is the recommended method for developers using GitHub Copilot interactively. When you connect, VS Code opens your browser to authorize access, and handles token management automatically.
+
+### Workspace Configuration (OAuth)
+
+Create a `.vscode/mcp.json` file in your workspace root:
+
+```json
+{
+  "servers": {
+    "opentrace": {
+      "type": "http",
+      "url": "https://api.opentrace.ai/mcp/v1"
+    }
+  }
+}
+```
+
+When you first use the integration, VS Code will:
+
+1. Open your browser to the OpenTrace authorization page
+2. Prompt you to sign in (if not already signed in)
+3. Ask you to select an organization and confirm permissions
+4. Automatically receive and store the authentication token
+
+!!! note
+    VS Code runs a temporary local server to receive the OAuth callback. Your browser will be redirected to `127.0.0.1` to complete the authorization.
+
+### Global Configuration (OAuth)
+
+To make OpenTrace available across all your VS Code workspaces with OAuth:
+
+1. Open VS Code Settings (`Cmd+,` on macOS, `Ctrl+,` on Windows/Linux)
+2. Search for "mcp" in the settings search bar
+3. Click **Edit in settings.json**
+4. Add the following configuration:
+
+```json
+{
+  "github.copilot.chat.mcp.servers": {
+    "opentrace": {
+      "type": "http",
+      "url": "https://api.opentrace.ai/mcp/v1"
+    }
+  }
+}
+```
+
+## Option B: API Token Authentication
+
+API tokens are recommended for automated environments such as CI/CD pipelines, scripts, or headless servers where browser-based OAuth isn't possible.
+
+### 1. Get Your API Token
+
+1. Log in to the [OpenTrace dashboard](https://app.opentrace.ai)
+2. Click on the **Organization Switcher** in the sidebar
+3. Select **Manage organization** to open your organization profile
+4. Navigate to **Service Accounts**
+5. Click **Create Service Account** and give it a name (e.g., "VS Code")
+6. Click **Generate Token** on the service account you created
+7. Copy the token - you'll need it in the next step
+
+!!! warning
+    The token is only displayed once. Make sure to copy it before closing the dialog.
+
+### 2. Configure MCP with API Token
+
+#### Workspace Configuration
 
 Create a `.vscode/mcp.json` file in your workspace root:
 
@@ -65,9 +134,9 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
     ```
     Make sure to add `.env` to your `.gitignore` file.
 
-#### Option B: Global Configuration
+#### Global Configuration
 
-To make OpenTrace available across all your VS Code workspaces, add the configuration to your user settings.
+To make OpenTrace available across all your VS Code workspaces with an API token:
 
 1. Open VS Code Settings (`Cmd+,` on macOS, `Ctrl+,` on Windows/Linux)
 2. Search for "mcp" in the settings search bar
@@ -93,7 +162,7 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
 !!! note
     Global settings do not support input variables for secrets. Consider using workspace configuration if you need to avoid storing the token in settings.
 
-### 3. Verify the Connection
+## Verify the Connection
 
 1. Open the Copilot Chat panel in VS Code (`Cmd+Shift+I` on macOS, `Ctrl+Shift+I` on Windows/Linux)
 2. Ask Copilot to verify the connection:
@@ -149,7 +218,14 @@ What are the most critical services in terms of dependencies?
 - Check that the JSON syntax is valid
 - Reload VS Code after making configuration changes (`Cmd+Shift+P` → "Developer: Reload Window")
 
-### "Unauthorized" Error
+### OAuth Authorization Failed
+
+- Ensure your browser can open URLs from VS Code
+- Check that pop-ups are not blocked
+- Verify you have access to the OpenTrace organization
+- Try removing the configuration and re-adding it
+
+### "Unauthorized" Error (API Token)
 
 - Verify your API token is correct
 - Check that the token hasn't expired

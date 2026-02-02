@@ -11,17 +11,50 @@ By connecting OpenTrace to Claude Code, you give Claude access to your system's 
 ## Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and configured
-- An OpenTrace account with an API token
+- An OpenTrace account
 
-## Setup Steps
+## Authentication Methods
 
---8<-- "get-api-token.md"
+OpenTrace supports two authentication methods for Claude Code:
 
-### 2. Configure MCP
+| Method | Best For | How It Works |
+|--------|----------|--------------|
+| **OAuth** (Recommended) | Interactive use by developers | Browser opens for authorization, tokens managed automatically |
+| **API Token** | Automation, CI/CD, headless environments | Service account token configured manually |
 
-Claude Code uses MCP (Model Context Protocol) configuration files to connect to external services. You can configure OpenTrace at the project level or globally.
+## Option A: OAuth Authentication (Recommended)
 
-#### Option A: Project-Level Configuration (Recommended)
+OAuth is the recommended method for developers using Claude Code interactively. When you connect, Claude Code opens your browser to authorize access, and handles token management automatically.
+
+### Quick Setup
+
+Run the following command to add OpenTrace with OAuth:
+
+```bash
+claude mcp add opentrace --transport http https://api.opentrace.ai/mcp/v1
+```
+
+When you first use the integration, Claude Code will:
+
+1. Open your browser to the OpenTrace authorization page
+2. Prompt you to sign in (if not already signed in)
+3. Ask you to select an organization and confirm permissions
+4. Automatically receive and store the authentication token
+
+!!! note
+    Claude Code runs a temporary local server to receive the OAuth callback. Your browser will be redirected to `127.0.0.1` to complete the authorization.
+
+By default, this adds the server to your user configuration (available in all sessions). To add it to a specific project only, use the `--scope` flag:
+
+```bash
+claude mcp add opentrace --transport http https://api.opentrace.ai/mcp/v1 --scope project
+```
+
+### Manual Configuration (OAuth)
+
+You can also configure OAuth manually by creating or editing configuration files.
+
+**Project-Level Configuration**
 
 Create a `.mcp.json` file in your project root:
 
@@ -30,37 +63,47 @@ Create a `.mcp.json` file in your project root:
   "mcpServers": {
     "opentrace": {
       "type": "http",
-      "url": "https://api.opentrace.ai/mcp/v1",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_TOKEN"
-      }
+      "url": "https://api.opentrace.ai/mcp/v1"
     }
   }
 }
 ```
 
-Replace `YOUR_API_TOKEN` with your OpenTrace API token.
+**Global Configuration**
 
-!!! tip
-    Use an environment variable to avoid committing your token:
-    ```json
-    {
-      "mcpServers": {
-        "opentrace": {
-          "type": "http",
-          "url": "https://api.opentrace.ai/mcp/v1",
-          "headers": {
-            "Authorization": "Bearer ${OPENTRACE_API_TOKEN}"
-          }
-        }
-      }
+Edit `~/.claude/settings.json` (macOS/Linux) or `%USERPROFILE%\.claude\settings.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "opentrace": {
+      "type": "http",
+      "url": "https://api.opentrace.ai/mcp/v1"
     }
-    ```
-    Then set the environment variable: `export OPENTRACE_API_TOKEN=your_token_here`
+  }
+}
+```
 
-#### Option B: Command-Line Configuration
+## Option B: API Token Authentication
 
-Use the `claude mcp add` command to configure OpenTrace directly from your terminal:
+API tokens are recommended for automated environments such as CI/CD pipelines, scripts, or headless servers where browser-based OAuth isn't possible.
+
+### 1. Get Your API Token
+
+1. Log in to the [OpenTrace dashboard](https://app.opentrace.ai)
+2. Click on the **Organization Switcher** in the sidebar
+3. Select **Manage organization** to open your organization profile
+4. Navigate to **Service Accounts**
+5. Click **Create Service Account** and give it a name (e.g., "Claude Code CI")
+6. Click **Generate Token** on the service account you created
+7. Copy the token - you'll need it in the next step
+
+!!! warning
+    The token is only displayed once. Make sure to copy it before closing the dialog.
+
+### 2. Configure MCP with API Token
+
+#### Command-Line Configuration
 
 ```bash
 claude mcp add opentrace \
@@ -80,23 +123,9 @@ Replace `YOUR_API_TOKEN` with your OpenTrace API token.
       --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}"
     ```
 
-By default, this adds the server to your user configuration (available in all sessions). To add it to a specific project only, use the `--scope` flag:
+#### Project-Level Configuration
 
-```bash
-claude mcp add opentrace \
-  --transport http \
-  https://api.opentrace.ai/mcp/v1 \
-  --header "Authorization: Bearer ${OPENTRACE_API_TOKEN}" \
-  --scope project
-```
-
-#### Option C: Global Configuration (Manual)
-
-To make OpenTrace available in all your Claude Code sessions, add the configuration to your global settings file.
-
-**macOS / Linux:**
-
-Edit `~/.claude/settings.json`:
+Create a `.mcp.json` file in your project root:
 
 ```json
 {
@@ -112,11 +141,31 @@ Edit `~/.claude/settings.json`:
 }
 ```
 
-**Windows:**
+Then set the environment variable:
 
-Edit `%USERPROFILE%\.claude\settings.json` with the same configuration.
+```bash
+export OPENTRACE_API_TOKEN=your_token_here
+```
 
-### 3. Verify the Connection
+#### Global Configuration
+
+Edit `~/.claude/settings.json` (macOS/Linux) or `%USERPROFILE%\.claude\settings.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "opentrace": {
+      "type": "http",
+      "url": "https://api.opentrace.ai/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer ${OPENTRACE_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+## Verify the Connection
 
 Start Claude Code in your terminal:
 
@@ -175,7 +224,14 @@ What are the most critical services in terms of dependencies?
 - Restart Claude Code after making configuration changes
 - Run `claude mcp list` to see all configured MCP servers
 
-### "Unauthorized" Error
+### OAuth Authorization Failed
+
+- Ensure your browser can open URLs from the terminal
+- Check that pop-ups are not blocked
+- Verify you have access to the OpenTrace organization
+- Try removing the server with `claude mcp remove opentrace` and adding it again
+
+### "Unauthorized" Error (API Token)
 
 - Verify your API token is correct
 - Check that the token hasn't expired
