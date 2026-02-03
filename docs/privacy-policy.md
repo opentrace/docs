@@ -2,7 +2,7 @@
 
 **OpenTrace**
 
-**Effective Date:** January 23, 2026
+**Effective Date:** February 3, 2026
 
 **Last Updated:** January 23, 2026
 
