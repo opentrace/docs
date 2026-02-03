@@ -4,9 +4,11 @@ OpenTrace connects to your existing tools and infrastructure to build a complete
 
 ## AI Assistants
 
-| Integration | Type | What It Provides |
-|-------------|------|------------------|
-| [Claude Code](claude-code.md) | MCP | Architecture knowledge for Claude Code CLI |
+| Integration | Authentication | What It Provides |
+|-------------|----------------|------------------|
+| [Claude Web](claude-web.md) | OAuth | Architecture knowledge for claude.ai |
+| [Claude Code](claude-code.md) | OAuth / API Token | Architecture knowledge for Claude Code CLI |
+| [GitHub Copilot](github-copilot.md) | OAuth / API Token | Architecture knowledge for VS Code Copilot |
 
 ## Data Sources
 
