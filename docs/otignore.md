@@ -243,10 +243,6 @@ Large test data files can slow down analysis:
 # Mock data
 **/mocks/
 **/__mocks__/
-
-# But keep test code
-!**/*_test.go
-!**/*_test.py
 ```
 
 ### Performance Optimization for Large Repos
