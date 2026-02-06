@@ -78,6 +78,7 @@ nav:
     - Data Sources:
       - GitHub: integrations/github.md
       - GitLab: integrations/gitlab.md
+      - Excluding Files from Data Sources: otignore.md
       - AWS EKS (Early Access): integrations/aws-eks.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md

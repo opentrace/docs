@@ -21,6 +21,8 @@ Connect GitLab to sync repository data and analyze code structure.
 - Code symbols and dependencies
 - Issues
 
+You can exclude specific files or directories from analysis using [`.otignore` files](../otignore.md).
+
 ## Self-Hosted GitLab
 
 For self-hosted GitLab instances, you may need to configure the GitLab URL in your OpenTrace settings before connecting.
