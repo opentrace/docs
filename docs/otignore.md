@@ -284,11 +284,6 @@ node_modules/
 
 ### File Still Appears in Analysis?
 
-**Verify the file is committed:**
-- `.otignore` only excludes files that are already in your Git repository
-- Check with `git ls-files | grep <filename>`
-- If the file isn't committed, OpenTrace won't see it anyway
-
 **Check file location:**
 - Ensure `.otignore` is in the repository root, not a subdirectory
 - Verify the file is named exactly `.otignore` or `.opentraceignore`
