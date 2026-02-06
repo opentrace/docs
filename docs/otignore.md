@@ -63,6 +63,27 @@ If both files exist, patterns from both will be applied. Patterns from `.otignor
 
 The ignore file must be placed in the **repository root directory**. Ignore files in subdirectories are not currently supported.
 
+### Default Exclusions
+
+OpenTrace automatically excludes certain directories from analysis, even without an `.otignore` file. These directories are always skipped:
+
+- `.git` - Git repository metadata
+- `.venv`, `venv` - Python virtual environments
+- `node_modules` - Node.js dependencies
+- `__pycache__` - Python bytecode cache
+- `.pytest_cache` - Pytest cache
+- `.mypy_cache` - MyPy type checker cache
+- `.tox` - Tox testing environments
+- `dist` - Distribution/build output
+- `build` - Build artifacts
+- `.eggs` - Python egg artifacts
+- `vendor` - Vendored dependencies
+
+These default exclusions work alongside your `.otignore` patterns. You don't need to add these directories to your `.otignore` file - they're already excluded automatically.
+
+!!! note "Why these defaults?"
+    These directories typically contain dependencies, build artifacts, or caching data that adds noise to analysis without providing value. Excluding them by default improves performance and keeps your knowledge graph focused on your actual source code.
+
 ## Pattern Syntax
 
 `.otignore` uses the same pattern syntax as `.gitignore`, powered by the `pathspec` library. This ensures familiar and predictable behavior.
