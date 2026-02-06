@@ -785,6 +785,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#default-exclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Exclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1338,6 +1349,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#default-exclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Exclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1718,6 +1740,26 @@
 <p>If both files exist, patterns from both will be applied. Patterns from <code>.otignore</code> are loaded first, followed by patterns from <code>.opentraceignore</code>.</p>
 <h3 id="file-location">File Location<a class="headerlink" href="#file-location" title="Permanent link">&para;</a></h3>
 <p>The ignore file must be placed in the <strong>repository root directory</strong>. Ignore files in subdirectories are not currently supported.</p>
+<h3 id="default-exclusions">Default Exclusions<a class="headerlink" href="#default-exclusions" title="Permanent link">&para;</a></h3>
+<p>OpenTrace automatically excludes certain directories from analysis, even without an <code>.otignore</code> file. These directories are always skipped:</p>
+<ul>
+<li><code>.git</code> - Git repository metadata</li>
+<li><code>.venv</code>, <code>venv</code> - Python virtual environments</li>
+<li><code>node_modules</code> - Node.js dependencies</li>
+<li><code>__pycache__</code> - Python bytecode cache</li>
+<li><code>.pytest_cache</code> - Pytest cache</li>
+<li><code>.mypy_cache</code> - MyPy type checker cache</li>
+<li><code>.tox</code> - Tox testing environments</li>
+<li><code>dist</code> - Distribution/build output</li>
+<li><code>build</code> - Build artifacts</li>
+<li><code>.eggs</code> - Python egg artifacts</li>
+<li><code>vendor</code> - Vendored dependencies</li>
+</ul>
+<p>These default exclusions work alongside your <code>.otignore</code> patterns. You don't need to add these directories to your <code>.otignore</code> file - they're already excluded automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Why these defaults?</p>
+<p>These directories typically contain dependencies, build artifacts, or caching data that adds noise to analysis without providing value. Excluding them by default improves performance and keeps your knowledge graph focused on your actual source code.</p>
+</div>
 <h2 id="pattern-syntax">Pattern Syntax<a class="headerlink" href="#pattern-syntax" title="Permanent link">&para;</a></h2>
 <p><code>.otignore</code> uses the same pattern syntax as <code>.gitignore</code>, powered by the <code>pathspec</code> library. This ensures familiar and predictable behavior.</p>
 <h3 id="basic-patterns">Basic Patterns<a class="headerlink" href="#basic-patterns" title="Permanent link">&para;</a></h3>
@@ -1935,10 +1977,6 @@
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>node_modules/
 </code></pre></div></p>
 <h3 id="file-still-appears-in-analysis">File Still Appears in Analysis?<a class="headerlink" href="#file-still-appears-in-analysis" title="Permanent link">&para;</a></h3>
-<p><strong>Verify the file is committed:</strong>
-- <code>.otignore</code> only excludes files that are already in your Git repository
-- Check with <code>git ls-files | grep &lt;filename&gt;</code>
-- If the file isn't committed, OpenTrace won't see it anyway</p>
 <p><strong>Check file location:</strong>
 - Ensure <code>.otignore</code> is in the repository root, not a subdirectory
 - Verify the file is named exactly <code>.otignore</code> or <code>.opentraceignore</code></p>
