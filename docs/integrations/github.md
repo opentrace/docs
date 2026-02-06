@@ -21,6 +21,8 @@ Connect GitHub to sync repository data and analyze code structure.
 - Code symbols and dependencies
 - Issues
 
+You can exclude specific files or directories from analysis using [`.otignore` files](../otignore.md).
+
 ## Permissions Required
 
 OpenTrace requests read-only access to:
