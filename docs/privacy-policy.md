@@ -268,9 +268,9 @@ For material changes, we will provide notice through the Service or by other mea
 
 If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:
 
-**OpenTrace**
-14205 N MO PAC EXPY, STE 570, PMB 640435
-Austin, TX 78728, USA
+**OpenTrace**<br/>
+14205 N MO PAC EXPY, STE 570, PMB 640435<br/>
+Austin, TX 78728, USA<br/>
 Email: support@opentrace.com
 
 We will respond to your inquiry within a reasonable timeframe and in accordance with applicable law.

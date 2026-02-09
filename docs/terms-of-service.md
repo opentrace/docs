@@ -666,9 +666,9 @@ These Terms do not create a partnership, joint venture, employment, or agency re
 
 For questions about these Terms, contact us at:
 
-**Email**: support@opentrace.com
-**Address**: 14205 N MO PAC EXPY, STE 570, PMB 640435
-Austin, TX 78728, USA
+**Email**: support@opentrace.com<br/>
+**Address**: 14205 N MO PAC EXPY, STE 570, PMB 640435<br/>
+Austin, TX 78728, USA<br/>
 **Website**: https://opentrace.com
 
 For technical support: [SUPPORT EMAIL]
