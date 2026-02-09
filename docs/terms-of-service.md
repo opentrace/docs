@@ -359,20 +359,14 @@ OpenTrace includes open source software components, each subject to its own lice
 
 ## 8. Payment Terms
 
-### 8.1 Pricing and Plans
-
-[**TO BE DETERMINED** - Add specific pricing tiers, billing cycles, and plan features]
-
-OpenTrace offers [free trial / freemium / paid subscription] plans. Current pricing is available at *[PRICING URL]*.
-
-### 8.2 Billing
+### 8.1 Billing
 
 - Subscription fees are billed [monthly / annually] in advance
 - Fees are non-refundable except as required by law
 - All fees are in [USD / CURRENCY] and exclude applicable taxes
 - You are responsible for all taxes, duties, and assessments
 
-### 8.3 Usage-Based Charges
+### 8.2 Usage-Based Charges
 
 In addition to subscription fees, you may incur charges for:
 
@@ -383,7 +377,7 @@ In addition to subscription fees, you may incur charges for:
 
 Usage-based charges are billed [monthly] in arrears.
 
-### 8.4 Payment Methods
+### 8.3 Payment Methods
 
 We accept payment via:
 
@@ -393,7 +387,7 @@ We accept payment via:
 
 You authorize us to charge your payment method on file.
 
-### 8.5 Late Payment
+### 8.4 Late Payment
 
 If payment fails:
 
@@ -402,14 +396,14 @@ If payment fails:
 - Your account may be terminated after 30 days
 - You remain liable for all outstanding charges plus collection costs
 
-### 8.6 Price Changes
+### 8.5 Price Changes
 
 We may change pricing with 30 days' advance notice. Price changes apply:
 
 - Immediately for new customers
 - At next renewal for existing customers
 
-### 8.7 Refund Policy
+### 8.6 Refund Policy
 
 [**TO BE DETERMINED** - Add specific refund terms]
 
