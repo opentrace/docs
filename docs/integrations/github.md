@@ -30,3 +30,75 @@ OpenTrace requests read-only access to:
 - Repository contents
 - Issues
 - Organization membership (for org repos)
+
+## Changing the Synced Branch
+
+By default, OpenTrace syncs the default branch of each repository (typically `main` or `master`). You can change which branch is synced for any repository through the UI or API.
+
+### Using the UI
+
+1. Navigate to **Integrations > GitHub** in the OpenTrace UI
+2. Find the repository you want to configure
+3. Click the repository to open its sync settings
+4. Click the edit icon (✏️) next to the **Branch** field
+5. Enter the new branch name (e.g., `develop`, `staging`, `feature/new-ui`)
+6. Click the checkmark (✓) to save
+7. Confirm the change by typing the repository name when prompted
+
+**Important Notes:**
+
+- Changing the branch will trigger a reindex of the repository code
+- All existing code index data for that repository will be removed
+- The reindexing process may take several minutes depending on repository size
+- The branch must exist in the repository before you can sync it
+
+### Using the API
+
+You can also change the branch programmatically using the API:
+
+```bash
+curl -X POST \
+  https://api.opentrace.io/integrations/v1/setup/{integrationID}/sync/{syncID} \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "settings": {
+      "code_branch": "develop"
+    },
+    "merge": true,
+    "resyncs": ["code"],
+    "purge": true
+  }'
+```
+
+**Parameters:**
+
+- `integrationID` - Your GitHub integration ID
+- `syncID` - The repository's sync ID (typically the repository ID)
+- `settings.code_branch` - The name of the branch to sync
+- `merge` - Set to `true` to merge with existing settings (recommended)
+- `resyncs` - Array of sync types to trigger (`["code"]` for code sync)
+- `purge` - Set to `true` to remove old data before resyncing (recommended when changing branches)
+
+### Finding Integration and Sync IDs
+
+To get your integration and sync IDs:
+
+```bash
+# List all integrations
+curl -X GET \
+  https://api.opentrace.io/integrations/v1/setup \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+
+# Get syncs for a specific integration
+curl -X GET \
+  https://api.opentrace.io/integrations/v1/setup/{integrationID} \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+### Branch Configuration Behavior
+
+- **First-time sync**: Uses the repository's default branch from GitHub
+- **Custom branch**: Once set, OpenTrace continues using your configured branch
+- **Branch deletion**: If the configured branch is deleted, syncing will fail until you update to a valid branch
+- **Empty value**: Setting `code_branch` to an empty string or removing it will revert to using the repository's default branch
