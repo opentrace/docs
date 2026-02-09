@@ -724,17 +724,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#finding-integration-and-sync-ids" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Finding Integration and Sync IDs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#branch-configuration-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1044,17 +1033,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#finding-integration-and-sync-ids" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Finding Integration and Sync IDs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#branch-configuration-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1139,41 +1117,7 @@
 <li>The branch must exist in the repository before you can sync it</li>
 </ul>
 <h3 id="using-the-api">Using the API<a class="headerlink" href="#using-the-api" title="Permanent link">&para;</a></h3>
-<p>You can also change the branch programmatically using the API:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>https://api.opentrace.io/integrations/v1/setup/<span class="o">{</span>integrationID<span class="o">}</span>/sync/<span class="o">{</span>syncID<span class="o">}</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">    &quot;settings&quot;: {</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">      &quot;code_branch&quot;: &quot;develop&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">    },</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">    &quot;merge&quot;: true,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">    &quot;resyncs&quot;: [&quot;code&quot;],</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">    &quot;purge&quot;: true</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">  }&#39;</span>
-</code></pre></div>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>integrationID</code> - Your GitHub integration ID</li>
-<li><code>syncID</code> - The repository's sync ID (typically the repository ID)</li>
-<li><code>settings.code_branch</code> - The name of the branch to sync</li>
-<li><code>merge</code> - Set to <code>true</code> to merge with existing settings (recommended)</li>
-<li><code>resyncs</code> - Array of sync types to trigger (<code>["code"]</code> for code sync)</li>
-<li><code>purge</code> - Set to <code>true</code> to remove old data before resyncing (recommended when changing branches)</li>
-</ul>
-<h3 id="finding-integration-and-sync-ids">Finding Integration and Sync IDs<a class="headerlink" href="#finding-integration-and-sync-ids" title="Permanent link">&para;</a></h3>
-<p>To get your integration and sync IDs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># List all integrations</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>https://api.opentrace.io/integrations/v1/setup<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_TOKEN&quot;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Get syncs for a specific integration</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>https://api.opentrace.io/integrations/v1/setup/<span class="o">{</span>integrationID<span class="o">}</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_TOKEN&quot;</span>
-</code></pre></div>
+<p>You can also change the branch programmatically using the API.  This is documented under https://api.opentrace.ai/openapi/ - see the section on integrations.</p>
 <h3 id="branch-configuration-behavior">Branch Configuration Behavior<a class="headerlink" href="#branch-configuration-behavior" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>First-time sync</strong>: Uses the repository's default branch from GitHub</li>
