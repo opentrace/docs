@@ -2,9 +2,9 @@
 
 **OpenTrace**
 
-**Effective Date:** February 3, 2026
+**Effective Date:** February 6, 2026
 
-**Last Updated:** January 23, 2026
+**Last Updated:** February 6, 2026
 
 ---
 
@@ -50,61 +50,64 @@ If you choose to sign in using Google, we receive basic profile information (suc
 
 ### 2.4 Customer-Connected Data Sources
 
-OpenTrace allows customers to connect external data sources, including GitHub, GitLab, Linear, Kubernetes, Slack, and various observability platforms (Grafana, Datadog, Jaeger, AWS). When you connect these services, OpenTrace stores OAuth credentials and API tokens (encrypted) and may access and process data from these platforms, which may include:
+OpenTrace allows customers to connect external data sources, including GitHub, GitLab, Linear, Kubernetes, Slack, AWS, and observability platforms (such as Grafana, Datadog, and Jaeger).
 
-- Repository information and code metadata
-- Commit history, author information, and profile pictures
-- Code changes, file paths, and line numbers from diffs
-- Pull request and merge request data, including reviewers and approvers
-- Issue and ticket data, including assignee information and comments
-- CI/CD pipeline execution data
-- Kubernetes cluster and deployment information
-- Slack workspace IDs, team information, and bot tokens
-- AWS credentials for cluster access
-- Log, metric, and trace data from observability platforms
+When you connect these services, OpenTrace stores **OAuth credentials and API tokens in encrypted form** and may access and process data from these platforms **solely to provide the Service**.
 
-This data may contain personal identifiers such as usernames, email addresses, profile pictures, or other information associated with commits, tickets, or system configurations. OpenTrace stores summaries, metadata, and OAuth credentials (encrypted) derived from connected sources and may access original source data as needed to provide the Service.
+This data may include:
+
+* Repository information and code metadata
+* Commit history, author information, and profile pictures
+* Code changes, file paths, and line numbers from diffs
+* Pull request and merge request data
+* Issue and ticket data, including comments and assignees
+* CI/CD pipeline execution data
+* Kubernetes cluster metadata and deployment information
+* Slack workspace identifiers and message content **when explicitly referenced or authorized**
+
+* Observability data such as logs, metrics, and traces
+
+This data **may contain personal identifiers** such as usernames, email addresses, or profile images.
+
+**Role Clarification**
+
+OpenTrace processes customer-connected data **as a data processor acting on your instructions**. You remain the data controller for any personal data contained in connected systems.
 
 ---
 
 ## 3. How We Use Your Information
 
-We use the information we collect for the following purposes:
+**AI and Machine Learning**
 
-- **Account Management:** To create and manage your user account and organization memberships
-- **Service Delivery:** To provide, operate, and maintain the Service, including:
-  - AI-powered investigation and incident analysis using large language models
-  - Processing and analyzing data from connected sources (GitHub, GitLab, Kubernetes, etc.)
-  - Generating summaries and insights from your operational data
-  - Creating and managing investigations, conversations, and timeline events
-  - Providing personalized features based on your role and organization context
-- **Service Improvement:** To understand how users interact with our Service and to improve functionality through analytics and session replay analysis
-- **Security:** To detect, prevent, and address technical issues and security threats
-- **Feature Management:** To enable or disable features based on your organization and user context
-- **Legal Compliance:** To comply with applicable laws and regulations
+OpenTrace uses artificial intelligence and machine learning models, including Google Vertex AI (Gemini models), to assist in analyzing investigation data and connected system context.
+AI processing is used to:
 
-We do not use your personal information for marketing purposes or send promotional communications.
+* Correlate signals across connected systems
+* Generate hypotheses, summaries, and explanations
+* Assist users in understanding system behavior
 
-**AI and Machine Learning:** We use AI models (including Google Vertex AI) to analyze your investigation data and connected sources. This processing occurs to provide core Service functionality and is not used to train public models.
+**Important AI Limitations and Safeguards**:
+
+* AI outputs are **informational and assistive only**
+* Outputs may be inaccurate, incomplete, or misleading
+* **Human review is required** before relying on AI outputs
+* OpenTrace does **not** perform automated decision-making that produces legal or similarly significant effects
+
+**Model Training Assurance**
+
+Customer data and personal information are **not used to train public or third-party AI models**. AI providers process data under contractual terms that prohibit retention or reuse of customer data for model training.
 
 ---
 
 ## 4. Third-Party Service Providers
 
-We share your information with the following third-party service providers who assist us in operating the Service:
+**Subprocessor Use**
 
-| Provider | Purpose | Data Shared |
-|----------|---------|-------------|
-| **Clerk** | User authentication and account management | Email, name, profile picture, organization membership and role, account credentials |
-| **Firebase/Google Cloud** | Primary data storage, authentication, and file storage | All application data including user profile, investigations, conversations, timeline events, integration settings, and encrypted OAuth credentials |
-| **Google Analytics** | Usage analytics and service improvement (via Firebase) | User ID, organization ID, page views, user interactions, device information |
-| **Grafana Faro** | Application performance monitoring and error tracking | Performance metrics, browser errors, application version, environment context, user interaction data |
-| **Sentry** | Error tracking, debugging, and session replay | User ID, email, organization ID/name/slug, error logs, stack traces, performance traces, session recordings (with text masking and privacy controls), breadcrumbs, console messages, HTTP request metadata |
-| **LaunchDarkly** | Feature flag management and experimentation | User ID, organization ID/slug, user's organization role, application version |
-| **OpenTelemetry** | Distributed tracing and observability (optional) | Distributed traces, timing information, service name and version, trace context |
-| **Google** | OAuth authentication (optional) | Authentication tokens, basic profile information |
+We engage third-party service providers (“Subprocessors”) to support delivery of the Service. These providers process personal data **only on our instructions** and are contractually obligated to protect it.
 
-These service providers are contractually obligated to protect your information and may only use it to provide services to us.
+We maintain an up-to-date list of Subprocessors, including their purpose and data location, available upon request or via our Privacy Policy page.
+
+We may update Subprocessors from time to time and will provide notice where required by applicable law.
 
 ---
 
@@ -126,21 +129,22 @@ Browser-based storage used to save application state and preferences locally on 
 
 ### 5.4 Session Replay
 
-We use Sentry's session replay functionality to record user interactions with the application for debugging and service improvement purposes. Session replays capture:
+We use session replay technology (via Sentry) to diagnose errors, improve service reliability, and investigate user-reported issues.  Session replay may capture:
 
-- Screen interactions and clicks
-- Page navigation
-- Form interactions (with input masking enabled)
-- Network requests and responses (filtered for sensitive data)
+* Screen interactions and navigation
+* Clicks and UI events
+* Network request metadata (with sensitive data filtered)
 
 **Privacy Controls:**
-- Text content is automatically masked
-- Media elements (images, videos) are blocked
-- Input fields are masked to prevent capture of sensitive data
-- Sensitive HTTP headers and query parameters are filtered
-- Only sessions from internal domains are recorded
 
-You cannot opt out of session replay while using the Service, but all recordings are subject to strict privacy controls.
+* Text content is masked by default
+* Input fields are masked
+* Media elements are excluded
+* Sensitive headers and parameters are filtered
+
+You cannot opt out of session replay while using the Service.
+**Session replay is enabled only where necessary for service reliability and security.**
+**Enterprise customers may request alternative arrangements, subject to technical feasibility.**
 
 ### 5.5 Managing Your Preferences
 
@@ -152,13 +156,7 @@ Most web browsers allow you to control cookies through their settings. However, 
 
 ### 6.1 Data Location
 
-Your personal information is stored in the following locations:
-
-- **Clerk** (authentication provider): Primary servers and databases located in the United States
-- **Firebase/Firestore** (primary data storage): Google Cloud Platform project in the European Union
-- **Google Cloud Storage** (file uploads): Storage bucket in the European Union
-- **Sentry** (error tracking): Data stored in Sentry's European (Germany) region
-- **Other third-party services**: May store data in the United States or other regions as specified by their privacy policies
+Personal information is stored and processed using OpenTrace systems and approved Subprocessors. Data locations and residency details are described in our Privacy Policy and Subprocessor documentation and may change over time with appropriate safeguards.
 
 ### 6.2 Security Measures
 
@@ -173,23 +171,22 @@ We implement appropriate technical measures to protect your personal information
 
 While we strive to protect your information, no method of transmission over the Internet or electronic storage is completely secure. We cannot guarantee absolute security.
 
+### 6.3 Security Incident Notification
+
+In the event of a confirmed personal data breach, OpenTrace will notify affected customers **without undue delay** and in accordance with applicable law. Notifications will include, where reasonably available, information about the nature of the incident and mitigation steps taken.
+
 ---
 
 ## 7. Data Retention
 
-We retain your personal information for as long as your account remains active or as needed to provide the Service. Specific retention policies:
+We retain personal information **only for as long as necessary** to provide the Service or as required by law.  Retention periods may be configured at the organization level and include:
 
-- **User account data**: Retained until account deletion
-- **Investigations and conversations**: Retained according to organization settings (configurable investigation lifetime)
-- **Timeline events**: Retained according to organization settings (configurable timeline event lifetime)
-- **OAuth credentials and integration settings**: Deleted immediately when you disconnect an integration
-- **Session replays and error logs**: Retained by Sentry according to their retention policies (typically 90 days)
-- **Analytics data**: Retained by Google Analytics and Grafana Faro according to their retention policies
-- **Audit logs**: May be retained for longer periods for security and compliance purposes
+* Account data: retained until account deletion
+* Investigation data: retained per organization configuration
+* Integration credentials: deleted upon disconnection
+* Audit and security logs: retained for limited periods for compliance
 
-Upon account deletion, we will delete or anonymize your personal information within a reasonable timeframe, except where retention is required by law or for legitimate business purposes.
-
-For customer-connected data sources (GitHub, GitLab, Linear, Kubernetes, Slack), stored summaries, metadata, and encrypted credentials will be deleted when you disconnect the integration or delete your account.
+Following account termination, data is deleted or anonymized within a reasonable timeframe unless retention is legally required.
 
 ---
 
@@ -221,7 +218,7 @@ If you are located in the EEA, you have additional rights under the General Data
 - **Legitimate Interests:** Processing necessary for our legitimate business interests, such as improving our Service and ensuring security
 - **Legal Obligation:** Processing necessary to comply with applicable laws
 
-**Automated Decision-Making:** We do not use automated decision-making or profiling that produces legal or similarly significant effects.
+**Automated Decision-Making:** OpenTrace does **not** engage in automated decision-making or profiling that produces legal or similarly significant effects within the meaning of GDPR Article 22.
 
 ### 8.3 California Residents
 
@@ -239,19 +236,17 @@ If you are a California resident, you have rights under the California Consumer 
 
 ## 9. International Data Transfers
 
-Your information may be transferred to and processed in countries other than your country of residence, including the United States and countries within the European Union. These countries may have data protection laws that differ from your jurisdiction.
+Your information may be processed in countries other than your country of residence, including the United States and the European Union.
 
-When we transfer data internationally, we implement appropriate safeguards to protect your information in accordance with applicable law.
+Where required, OpenTrace relies on appropriate safeguards for international transfers, such as **Standard Contractual Clauses (SCCs)** or equivalent mechanisms, in accordance with applicable data protection laws.
 
 ---
 
 ## 10. Customer Data Processing
 
-When you connect external data sources (such as GitHub, GitLab, Linear, Kubernetes, Slack, AWS, or observability platforms like Grafana, Datadog, Jaeger) to OpenTrace, we act as a data processor on your behalf. You, as the customer, remain the data controller for any personal information contained within your connected data sources.
+OpenTrace processes customer-connected data solely to provide the Service. AI processing does not involve training or improving foundation models unless explicitly agreed in writing.
 
-OpenTrace uses AI models (including Google Vertex AI) to process and analyze data from your connected sources. This processing is performed solely to provide the Service to you and is not used to train public or third-party AI models.
-
-If your use of OpenTrace involves processing personal data subject to GDPR or other data protection regulations, we recommend entering into a Data Processing Agreement (DPA) with us. Please contact support@opentrace.com to request a DPA.
+Customers remain responsible for determining whether their use of OpenTrace complies with applicable data protection obligations.
 
 ---
 
@@ -273,9 +268,9 @@ For material changes, we will provide notice through the Service or by other mea
 
 If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:
 
-**OpenTrace**  
-14205 N MO PAC EXPY, STE 570, PMB 640435  
-Austin, TX 78728, USA  
+**OpenTrace**
+14205 N MO PAC EXPY, STE 570, PMB 640435
+Austin, TX 78728, USA
 Email: support@opentrace.com
 
 We will respond to your inquiry within a reasonable timeframe and in accordance with applicable law.
