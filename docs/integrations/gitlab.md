@@ -50,47 +50,7 @@ By default, OpenTrace syncs the default branch of each project (typically `main`
 
 ### Using the API
 
-You can also change the branch programmatically using the API:
-
-```bash
-curl -X POST \
-  https://api.opentrace.io/integrations/v1/setup/{integrationID}/sync/{syncID} \
-  -H "Authorization: Bearer YOUR_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "settings": {
-      "code_branch": "develop"
-    },
-    "merge": true,
-    "resyncs": ["code"],
-    "purge": true
-  }'
-```
-
-**Parameters:**
-
-- `integrationID` - Your GitLab integration ID
-- `syncID` - The project's sync ID (typically the project ID)
-- `settings.code_branch` - The name of the branch to sync
-- `merge` - Set to `true` to merge with existing settings (recommended)
-- `resyncs` - Array of sync types to trigger (`["code"]` for code sync)
-- `purge` - Set to `true` to remove old data before resyncing (recommended when changing branches)
-
-### Finding Integration and Sync IDs
-
-To get your integration and sync IDs:
-
-```bash
-# List all integrations
-curl -X GET \
-  https://api.opentrace.io/integrations/v1/setup \
-  -H "Authorization: Bearer YOUR_API_TOKEN"
-
-# Get syncs for a specific integration
-curl -X GET \
-  https://api.opentrace.io/integrations/v1/setup/{integrationID} \
-  -H "Authorization: Bearer YOUR_API_TOKEN"
-```
+You can also change the branch programmatically using the API.  This is documented under https://api.opentrace.ai/openapi/ - see the section on integrations.
 
 ### Branch Configuration Behavior
 
