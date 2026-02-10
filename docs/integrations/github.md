@@ -54,7 +54,7 @@ By default, OpenTrace syncs the default branch of each repository (typically `ma
 
 ### Using the API
 
-You can also change the branch programmatically using the API.  This is documented under https://api.opentrace.ai/openapi/ - see the section on integrations.
+You can also change the branch programmatically using the API.  This is documented under [api.opentrace.ai/openapi](https://api.opentrace.ai/openapi/) - see the section on integrations.
 
 ### Branch Configuration Behavior
 
