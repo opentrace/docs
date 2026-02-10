@@ -34,8 +34,8 @@ By default, OpenTrace syncs the default branch of each project (typically `main`
 ### Using the UI
 
 1. Navigate to **Integrations > GitLab** in the OpenTrace UI
-2. Find the project you want to configure
-3. Click the project to open its sync settings
+2. Find the project you want to configure under **Syncs**
+3. Click the 3 vertical dots and open its sync settings
 4. Click the edit icon (✏️) next to the **Branch** field
 5. Enter the new branch name (e.g., `develop`, `staging`, `feature/new-ui`)
 6. Click the checkmark (✓) to save
