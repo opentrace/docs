@@ -717,6 +717,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-the-synced-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing the Synced Branch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing the Synced Branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-configuration-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Configuration Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -948,6 +998,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-the-synced-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing the Synced Branch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing the Synced Branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-configuration-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Configuration Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -992,6 +1092,34 @@
 <p>You can exclude specific files or directories from analysis using <a href="../../otignore/"><code>.otignore</code> files</a>.</p>
 <h2 id="self-hosted-gitlab">Self-Hosted GitLab<a class="headerlink" href="#self-hosted-gitlab" title="Permanent link">&para;</a></h2>
 <p>For self-hosted GitLab instances, you may need to configure the GitLab URL in your OpenTrace settings before connecting.</p>
+<h2 id="changing-the-synced-branch">Changing the Synced Branch<a class="headerlink" href="#changing-the-synced-branch" title="Permanent link">&para;</a></h2>
+<p>By default, OpenTrace syncs the default branch of each project (typically <code>main</code> or <code>master</code>). You can change which branch is synced for any project through the UI or API.</p>
+<h3 id="using-the-ui">Using the UI<a class="headerlink" href="#using-the-ui" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navigate to <strong>Integrations &gt; GitLab</strong> in the OpenTrace UI</li>
+<li>Find the project you want to configure under <strong>Syncs</strong></li>
+<li>Click the 3 vertical dots and open its sync settings</li>
+<li>Click the edit icon (✏️) next to the <strong>Branch</strong> field</li>
+<li>Enter the new branch name (e.g., <code>develop</code>, <code>staging</code>, <code>feature/new-ui</code>)</li>
+<li>Click the checkmark (✓) to save</li>
+<li>Confirm the change by typing the project name when prompted</li>
+</ol>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li>Changing the branch will trigger a reindex of the project code</li>
+<li>All existing code index data for that project will be removed</li>
+<li>The reindexing process may take several minutes depending on project size</li>
+<li>The branch must exist in the project before you can sync it</li>
+</ul>
+<h3 id="using-the-api">Using the API<a class="headerlink" href="#using-the-api" title="Permanent link">&para;</a></h3>
+<p>You can also change the branch programmatically using the API.  This is documented under <a href="https://api.opentrace.ai/openapi/">api.opentrace.ai/openapi</a> - see the section on integrations.</p>
+<h3 id="branch-configuration-behavior">Branch Configuration Behavior<a class="headerlink" href="#branch-configuration-behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>First-time sync</strong>: Uses the project's default branch from GitLab</li>
+<li><strong>Custom branch</strong>: Once set, OpenTrace continues using your configured branch</li>
+<li><strong>Branch deletion</strong>: If the configured branch is deleted, syncing will fail until you update to a valid branch</li>
+<li><strong>Empty value</strong>: Setting <code>code_branch</code> to an empty string or removing it will revert to using the project's default branch</li>
+</ul>
 
 
 
