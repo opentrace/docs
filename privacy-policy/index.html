@@ -16,6 +16,8 @@
         <link rel="prev" href="../workflows/">
       
       
+        <link rel="next" href="../terms-of-service/">
+      
       
         
       
@@ -1020,6 +1022,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#63-security-incident-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Security Incident Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1145,6 +1158,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terms-of-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms of Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1375,6 +1415,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#63-security-incident-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Security Incident Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1518,8 +1569,8 @@
 
 <h1 id="privacy-policy">Privacy Policy<a class="headerlink" href="#privacy-policy" title="Permanent link">&para;</a></h1>
 <p><strong>OpenTrace</strong></p>
-<p><strong>Effective Date:</strong> February 3, 2026</p>
-<p><strong>Last Updated:</strong> January 23, 2026</p>
+<p><strong>Effective Date:</strong> February 6, 2026</p>
+<p><strong>Last Updated:</strong> February 6, 2026</p>
 <hr />
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <p>OpenTrace ("Company," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application and services (collectively, the "Service").</p>
@@ -1553,93 +1604,52 @@
 <h3 id="23-information-from-third-party-authentication">2.3 Information from Third-Party Authentication<a class="headerlink" href="#23-information-from-third-party-authentication" title="Permanent link">&para;</a></h3>
 <p>If you choose to sign in using Google, we receive basic profile information (such as your name and email address) as authorized by your Google account settings.</p>
 <h3 id="24-customer-connected-data-sources">2.4 Customer-Connected Data Sources<a class="headerlink" href="#24-customer-connected-data-sources" title="Permanent link">&para;</a></h3>
-<p>OpenTrace allows customers to connect external data sources, including GitHub, GitLab, Linear, Kubernetes, Slack, and various observability platforms (Grafana, Datadog, Jaeger, AWS). When you connect these services, OpenTrace stores OAuth credentials and API tokens (encrypted) and may access and process data from these platforms, which may include:</p>
+<p>OpenTrace allows customers to connect external data sources, including GitHub, GitLab, Linear, Kubernetes, Slack, AWS, and observability platforms (such as Grafana, Datadog, and Jaeger).</p>
+<p>When you connect these services, OpenTrace stores <strong>OAuth credentials and API tokens in encrypted form</strong> and may access and process data from these platforms <strong>solely to provide the Service</strong>.</p>
+<p>This data may include:</p>
 <ul>
 <li>Repository information and code metadata</li>
 <li>Commit history, author information, and profile pictures</li>
 <li>Code changes, file paths, and line numbers from diffs</li>
-<li>Pull request and merge request data, including reviewers and approvers</li>
-<li>Issue and ticket data, including assignee information and comments</li>
+<li>Pull request and merge request data</li>
+<li>Issue and ticket data, including comments and assignees</li>
 <li>CI/CD pipeline execution data</li>
-<li>Kubernetes cluster and deployment information</li>
-<li>Slack workspace IDs, team information, and bot tokens</li>
-<li>AWS credentials for cluster access</li>
-<li>Log, metric, and trace data from observability platforms</li>
+<li>Kubernetes cluster metadata and deployment information</li>
+<li>
+<p>Slack workspace identifiers and message content <strong>when explicitly referenced or authorized</strong></p>
+</li>
+<li>
+<p>Observability data such as logs, metrics, and traces</p>
+</li>
 </ul>
-<p>This data may contain personal identifiers such as usernames, email addresses, profile pictures, or other information associated with commits, tickets, or system configurations. OpenTrace stores summaries, metadata, and OAuth credentials (encrypted) derived from connected sources and may access original source data as needed to provide the Service.</p>
+<p>This data <strong>may contain personal identifiers</strong> such as usernames, email addresses, or profile images.</p>
+<p><strong>Role Clarification</strong></p>
+<p>OpenTrace processes customer-connected data <strong>as a data processor acting on your instructions</strong>. You remain the data controller for any personal data contained in connected systems.</p>
 <hr />
 <h2 id="3-how-we-use-your-information">3. How We Use Your Information<a class="headerlink" href="#3-how-we-use-your-information" title="Permanent link">&para;</a></h2>
-<p>We use the information we collect for the following purposes:</p>
+<p><strong>AI and Machine Learning</strong></p>
+<p>OpenTrace uses artificial intelligence and machine learning models, including Google Vertex AI (Gemini models), to assist in analyzing investigation data and connected system context.
+AI processing is used to:</p>
 <ul>
-<li><strong>Account Management:</strong> To create and manage your user account and organization memberships</li>
-<li><strong>Service Delivery:</strong> To provide, operate, and maintain the Service, including:</li>
-<li>AI-powered investigation and incident analysis using large language models</li>
-<li>Processing and analyzing data from connected sources (GitHub, GitLab, Kubernetes, etc.)</li>
-<li>Generating summaries and insights from your operational data</li>
-<li>Creating and managing investigations, conversations, and timeline events</li>
-<li>Providing personalized features based on your role and organization context</li>
-<li><strong>Service Improvement:</strong> To understand how users interact with our Service and to improve functionality through analytics and session replay analysis</li>
-<li><strong>Security:</strong> To detect, prevent, and address technical issues and security threats</li>
-<li><strong>Feature Management:</strong> To enable or disable features based on your organization and user context</li>
-<li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</li>
+<li>Correlate signals across connected systems</li>
+<li>Generate hypotheses, summaries, and explanations</li>
+<li>Assist users in understanding system behavior</li>
 </ul>
-<p>We do not use your personal information for marketing purposes or send promotional communications.</p>
-<p><strong>AI and Machine Learning:</strong> We use AI models (including Google Vertex AI) to analyze your investigation data and connected sources. This processing occurs to provide core Service functionality and is not used to train public models.</p>
+<p><strong>Important AI Limitations and Safeguards</strong>:</p>
+<ul>
+<li>AI outputs are <strong>informational and assistive only</strong></li>
+<li>Outputs may be inaccurate, incomplete, or misleading</li>
+<li><strong>Human review is required</strong> before relying on AI outputs</li>
+<li>OpenTrace does <strong>not</strong> perform automated decision-making that produces legal or similarly significant effects</li>
+</ul>
+<p><strong>Model Training Assurance</strong></p>
+<p>Customer data and personal information are <strong>not used to train public or third-party AI models</strong>. AI providers process data under contractual terms that prohibit retention or reuse of customer data for model training.</p>
 <hr />
 <h2 id="4-third-party-service-providers">4. Third-Party Service Providers<a class="headerlink" href="#4-third-party-service-providers" title="Permanent link">&para;</a></h2>
-<p>We share your information with the following third-party service providers who assist us in operating the Service:</p>
-<table>
-<thead>
-<tr>
-<th>Provider</th>
-<th>Purpose</th>
-<th>Data Shared</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Clerk</strong></td>
-<td>User authentication and account management</td>
-<td>Email, name, profile picture, organization membership and role, account credentials</td>
-</tr>
-<tr>
-<td><strong>Firebase/Google Cloud</strong></td>
-<td>Primary data storage, authentication, and file storage</td>
-<td>All application data including user profile, investigations, conversations, timeline events, integration settings, and encrypted OAuth credentials</td>
-</tr>
-<tr>
-<td><strong>Google Analytics</strong></td>
-<td>Usage analytics and service improvement (via Firebase)</td>
-<td>User ID, organization ID, page views, user interactions, device information</td>
-</tr>
-<tr>
-<td><strong>Grafana Faro</strong></td>
-<td>Application performance monitoring and error tracking</td>
-<td>Performance metrics, browser errors, application version, environment context, user interaction data</td>
-</tr>
-<tr>
-<td><strong>Sentry</strong></td>
-<td>Error tracking, debugging, and session replay</td>
-<td>User ID, email, organization ID/name/slug, error logs, stack traces, performance traces, session recordings (with text masking and privacy controls), breadcrumbs, console messages, HTTP request metadata</td>
-</tr>
-<tr>
-<td><strong>LaunchDarkly</strong></td>
-<td>Feature flag management and experimentation</td>
-<td>User ID, organization ID/slug, user's organization role, application version</td>
-</tr>
-<tr>
-<td><strong>OpenTelemetry</strong></td>
-<td>Distributed tracing and observability (optional)</td>
-<td>Distributed traces, timing information, service name and version, trace context</td>
-</tr>
-<tr>
-<td><strong>Google</strong></td>
-<td>OAuth authentication (optional)</td>
-<td>Authentication tokens, basic profile information</td>
-</tr>
-</tbody>
-</table>
-<p>These service providers are contractually obligated to protect your information and may only use it to provide services to us.</p>
+<p><strong>Subprocessor Use</strong></p>
+<p>We engage third-party service providers (“Subprocessors”) to support delivery of the Service. These providers process personal data <strong>only on our instructions</strong> and are contractually obligated to protect it.</p>
+<p>We maintain an up-to-date list of Subprocessors, including their purpose and data location, available upon request or via our Privacy Policy page.</p>
+<p>We may update Subprocessors from time to time and will provide notice where required by applicable law.</p>
 <hr />
 <h2 id="5-cookies-and-tracking-technologies">5. Cookies and Tracking Technologies<a class="headerlink" href="#5-cookies-and-tracking-technologies" title="Permanent link">&para;</a></h2>
 <p>OpenTrace uses the following technologies to enhance your experience:</p>
@@ -1650,33 +1660,28 @@
 <h3 id="53-local-storage">5.3 Local Storage<a class="headerlink" href="#53-local-storage" title="Permanent link">&para;</a></h3>
 <p>Browser-based storage used to save application state and preferences locally on your device.</p>
 <h3 id="54-session-replay">5.4 Session Replay<a class="headerlink" href="#54-session-replay" title="Permanent link">&para;</a></h3>
-<p>We use Sentry's session replay functionality to record user interactions with the application for debugging and service improvement purposes. Session replays capture:</p>
+<p>We use session replay technology (via Sentry) to diagnose errors, improve service reliability, and investigate user-reported issues.  Session replay may capture:</p>
 <ul>
-<li>Screen interactions and clicks</li>
-<li>Page navigation</li>
-<li>Form interactions (with input masking enabled)</li>
-<li>Network requests and responses (filtered for sensitive data)</li>
+<li>Screen interactions and navigation</li>
+<li>Clicks and UI events</li>
+<li>Network request metadata (with sensitive data filtered)</li>
 </ul>
-<p><strong>Privacy Controls:</strong>
-- Text content is automatically masked
-- Media elements (images, videos) are blocked
-- Input fields are masked to prevent capture of sensitive data
-- Sensitive HTTP headers and query parameters are filtered
-- Only sessions from internal domains are recorded</p>
-<p>You cannot opt out of session replay while using the Service, but all recordings are subject to strict privacy controls.</p>
+<p><strong>Privacy Controls:</strong></p>
+<ul>
+<li>Text content is masked by default</li>
+<li>Input fields are masked</li>
+<li>Media elements are excluded</li>
+<li>Sensitive headers and parameters are filtered</li>
+</ul>
+<p>You cannot opt out of session replay while using the Service.
+<strong>Session replay is enabled only where necessary for service reliability and security.</strong>
+<strong>Enterprise customers may request alternative arrangements, subject to technical feasibility.</strong></p>
 <h3 id="55-managing-your-preferences">5.5 Managing Your Preferences<a class="headerlink" href="#55-managing-your-preferences" title="Permanent link">&para;</a></h3>
 <p>Most web browsers allow you to control cookies through their settings. However, disabling cookies may limit your ability to use certain features of the Service.</p>
 <hr />
 <h2 id="6-data-storage-and-security">6. Data Storage and Security<a class="headerlink" href="#6-data-storage-and-security" title="Permanent link">&para;</a></h2>
 <h3 id="61-data-location">6.1 Data Location<a class="headerlink" href="#61-data-location" title="Permanent link">&para;</a></h3>
-<p>Your personal information is stored in the following locations:</p>
-<ul>
-<li><strong>Clerk</strong> (authentication provider): Primary servers and databases located in the United States</li>
-<li><strong>Firebase/Firestore</strong> (primary data storage): Google Cloud Platform project in the European Union</li>
-<li><strong>Google Cloud Storage</strong> (file uploads): Storage bucket in the European Union</li>
-<li><strong>Sentry</strong> (error tracking): Data stored in Sentry's European (Germany) region</li>
-<li><strong>Other third-party services</strong>: May store data in the United States or other regions as specified by their privacy policies</li>
-</ul>
+<p>Personal information is stored and processed using OpenTrace systems and approved Subprocessors. Data locations and residency details are described in our Privacy Policy and Subprocessor documentation and may change over time with appropriate safeguards.</p>
 <h3 id="62-security-measures">6.2 Security Measures<a class="headerlink" href="#62-security-measures" title="Permanent link">&para;</a></h3>
 <p>We implement appropriate technical measures to protect your personal information, including:</p>
 <ul>
@@ -1688,20 +1693,18 @@
 <li>Role-based access control (RBAC) for organizational data</li>
 </ul>
 <p>While we strive to protect your information, no method of transmission over the Internet or electronic storage is completely secure. We cannot guarantee absolute security.</p>
+<h3 id="63-security-incident-notification">6.3 Security Incident Notification<a class="headerlink" href="#63-security-incident-notification" title="Permanent link">&para;</a></h3>
+<p>In the event of a confirmed personal data breach, OpenTrace will notify affected customers <strong>without undue delay</strong> and in accordance with applicable law. Notifications will include, where reasonably available, information about the nature of the incident and mitigation steps taken.</p>
 <hr />
 <h2 id="7-data-retention">7. Data Retention<a class="headerlink" href="#7-data-retention" title="Permanent link">&para;</a></h2>
-<p>We retain your personal information for as long as your account remains active or as needed to provide the Service. Specific retention policies:</p>
+<p>We retain personal information <strong>only for as long as necessary</strong> to provide the Service or as required by law.  Retention periods may be configured at the organization level and include:</p>
 <ul>
-<li><strong>User account data</strong>: Retained until account deletion</li>
-<li><strong>Investigations and conversations</strong>: Retained according to organization settings (configurable investigation lifetime)</li>
-<li><strong>Timeline events</strong>: Retained according to organization settings (configurable timeline event lifetime)</li>
-<li><strong>OAuth credentials and integration settings</strong>: Deleted immediately when you disconnect an integration</li>
-<li><strong>Session replays and error logs</strong>: Retained by Sentry according to their retention policies (typically 90 days)</li>
-<li><strong>Analytics data</strong>: Retained by Google Analytics and Grafana Faro according to their retention policies</li>
-<li><strong>Audit logs</strong>: May be retained for longer periods for security and compliance purposes</li>
+<li>Account data: retained until account deletion</li>
+<li>Investigation data: retained per organization configuration</li>
+<li>Integration credentials: deleted upon disconnection</li>
+<li>Audit and security logs: retained for limited periods for compliance</li>
 </ul>
-<p>Upon account deletion, we will delete or anonymize your personal information within a reasonable timeframe, except where retention is required by law or for legitimate business purposes.</p>
-<p>For customer-connected data sources (GitHub, GitLab, Linear, Kubernetes, Slack), stored summaries, metadata, and encrypted credentials will be deleted when you disconnect the integration or delete your account.</p>
+<p>Following account termination, data is deleted or anonymized within a reasonable timeframe unless retention is legally required.</p>
 <hr />
 <h2 id="8-your-rights-and-choices">8. Your Rights and Choices<a class="headerlink" href="#8-your-rights-and-choices" title="Permanent link">&para;</a></h2>
 <p>Depending on your location, you may have the following rights regarding your personal information:</p>
@@ -1727,7 +1730,7 @@
 <li><strong>Legitimate Interests:</strong> Processing necessary for our legitimate business interests, such as improving our Service and ensuring security</li>
 <li><strong>Legal Obligation:</strong> Processing necessary to comply with applicable laws</li>
 </ul>
-<p><strong>Automated Decision-Making:</strong> We do not use automated decision-making or profiling that produces legal or similarly significant effects.</p>
+<p><strong>Automated Decision-Making:</strong> OpenTrace does <strong>not</strong> engage in automated decision-making or profiling that produces legal or similarly significant effects within the meaning of GDPR Article 22.</p>
 <h3 id="83-california-residents">8.3 California Residents<a class="headerlink" href="#83-california-residents" title="Permanent link">&para;</a></h3>
 <p>If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA), including:</p>
 <ul>
@@ -1740,13 +1743,12 @@
 <p><strong>We do not sell your personal information.</strong></p>
 <hr />
 <h2 id="9-international-data-transfers">9. International Data Transfers<a class="headerlink" href="#9-international-data-transfers" title="Permanent link">&para;</a></h2>
-<p>Your information may be transferred to and processed in countries other than your country of residence, including the United States and countries within the European Union. These countries may have data protection laws that differ from your jurisdiction.</p>
-<p>When we transfer data internationally, we implement appropriate safeguards to protect your information in accordance with applicable law.</p>
+<p>Your information may be processed in countries other than your country of residence, including the United States and the European Union.</p>
+<p>Where required, OpenTrace relies on appropriate safeguards for international transfers, such as <strong>Standard Contractual Clauses (SCCs)</strong> or equivalent mechanisms, in accordance with applicable data protection laws.</p>
 <hr />
 <h2 id="10-customer-data-processing">10. Customer Data Processing<a class="headerlink" href="#10-customer-data-processing" title="Permanent link">&para;</a></h2>
-<p>When you connect external data sources (such as GitHub, GitLab, Linear, Kubernetes, Slack, AWS, or observability platforms like Grafana, Datadog, Jaeger) to OpenTrace, we act as a data processor on your behalf. You, as the customer, remain the data controller for any personal information contained within your connected data sources.</p>
-<p>OpenTrace uses AI models (including Google Vertex AI) to process and analyze data from your connected sources. This processing is performed solely to provide the Service to you and is not used to train public or third-party AI models.</p>
-<p>If your use of OpenTrace involves processing personal data subject to GDPR or other data protection regulations, we recommend entering into a Data Processing Agreement (DPA) with us. Please contact support@opentrace.com to request a DPA.</p>
+<p>OpenTrace processes customer-connected data solely to provide the Service. AI processing does not involve training or improving foundation models unless explicitly agreed in writing.</p>
+<p>Customers remain responsible for determining whether their use of OpenTrace complies with applicable data protection obligations.</p>
 <hr />
 <h2 id="11-childrens-privacy">11. Children's Privacy<a class="headerlink" href="#11-childrens-privacy" title="Permanent link">&para;</a></h2>
 <p>The Service is not intended for individuals under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at support@opentrace.com, and we will take steps to delete such information.</p>
@@ -1757,9 +1759,9 @@
 <hr />
 <h2 id="13-contact-us">13. Contact Us<a class="headerlink" href="#13-contact-us" title="Permanent link">&para;</a></h2>
 <p>If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
-<p><strong>OpenTrace</strong><br />
-14205 N MO PAC EXPY, STE 570, PMB 640435<br />
-Austin, TX 78728, USA<br />
+<p><strong>OpenTrace</strong><br/>
+14205 N MO PAC EXPY, STE 570, PMB 640435<br/>
+Austin, TX 78728, USA<br/>
 Email: support@opentrace.com</p>
 <p>We will respond to your inquiry within a reasonable timeframe and in accordance with applicable law.</p>
 <hr />
