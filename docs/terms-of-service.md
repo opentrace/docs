@@ -1,8 +1,6 @@
 # OpenTrace Terms of Service
 
-**Last Updated:** February 6, 2026
-
-**IMPORTANT NOTICE**: This is a draft template created for legal review. It must be reviewed and approved by qualified legal counsel before publication or use.
+**Last Updated:** February 11, 2026
 
 ---
 
@@ -351,43 +349,27 @@ If you provide feedback, suggestions, or ideas about OpenTrace:
 - You waive any intellectual property rights in such feedback
 - We have no obligation to implement or respond to feedback
 
-### 7.5 Open Source Components
-
-OpenTrace includes open source software components, each subject to its own license terms. A list of open source components is available at [OPEN SOURCE URL].
-
 ---
 
 ## 8. Payment Terms
 
 ### 8.1 Billing
 
-- Subscription fees are billed [monthly / annually] in advance
+- Subscription fees are billed monthly in advance
 - Fees are non-refundable except as required by law
-- All fees are in [USD / CURRENCY] and exclude applicable taxes
+- All fees are in USD / CURRENCY] and exclude applicable taxes
 - You are responsible for all taxes, duties, and assessments
 
-### 8.2 Usage-Based Charges
-
-In addition to subscription fees, you may incur charges for:
-
-- [AI model API calls exceeding plan limits]
-- [Data storage exceeding plan limits]
-- [Investigation volume exceeding plan limits]
-- [Premium integrations or features]
-
-Usage-based charges are billed [monthly] in arrears.
-
-### 8.3 Payment Methods
+### 8.2 Payment Methods
 
 We accept payment via:
 
 - Credit card (Visa, Mastercard, American Express)
-- [ACH bank transfer]
-- [Invoice (for enterprise customers)]
+- Invoice (for enterprise customers)
 
 You authorize us to charge your payment method on file.
 
-### 8.4 Late Payment
+### 8.3 Late Payment
 
 If payment fails:
 
@@ -396,16 +378,12 @@ If payment fails:
 - Your account may be terminated after 30 days
 - You remain liable for all outstanding charges plus collection costs
 
-### 8.5 Price Changes
+### 8.4 Price Changes
 
 We may change pricing with 30 days' advance notice. Price changes apply:
 
 - Immediately for new customers
 - At next renewal for existing customers
-
-### 8.6 Refund Policy
-
-[**TO BE DETERMINED** - Add specific refund terms]
 
 ---
 
@@ -424,17 +402,11 @@ OpenTrace is provided on an "as available" basis. We do not guarantee:
 
 We may:
 
-- Perform scheduled maintenance with [24 hours] advance notice
+- Perform scheduled maintenance with 24 hours advance notice
 - Perform emergency maintenance without notice
 - Temporarily suspend Service for security, legal, or technical reasons
 
-### 9.3 Service Level Agreement (SLA)
-
-[OPTIONAL - For enterprise customers]
-
-Enterprise customers may be eligible for a separate Service Level Agreement. Contact [SALES EMAIL] for details.
-
-### 9.4 Service Modifications
+### 9.3 Service Modifications
 
 We reserve the right to:
 
@@ -579,17 +551,11 @@ We will treat your data and account information as confidential pursuant to our 
 
 ### 13.1 Governing Law
 
-These Terms are governed by the laws of [STATE/COUNTRY], without regard to conflict of law principles.
+These Terms are governed by the laws of Delaware, USA, without regard to conflict of law principles.
 
 ### 13.2 Dispute Resolution
 
-**[CHOOSE ONE APPROACH]:**
-
-**Option A - Arbitration**:
-Any dispute arising from these Terms shall be resolved by binding arbitration under the rules of [ARBITRATION PROVIDER] in [LOCATION]. You waive the right to a jury trial or to participate in a class action.
-
-**Option B - Court Jurisdiction**:
-Any dispute arising from these Terms shall be resolved exclusively in the state or federal courts located in [LOCATION]. You consent to personal jurisdiction in these courts.
+Any dispute arising from these Terms shall be resolved exclusively in the state or federal courts located in Delaware, USA. You consent to personal jurisdiction in these courts.
 
 ### 13.3 Class Action Waiver
 
@@ -646,9 +612,9 @@ If you are a U.S. government entity, OpenTrace is a "commercial item" as defined
 
 Notices to you may be sent to the email address associated with your account. Notices to OpenTrace should be sent to:
 
-[COMPANY LEGAL NAME]
-[ADDRESS]
-Email: [LEGAL EMAIL]
+OpenTrace, Inc<br/>
+14205 N MO PAC EXPY, STE 570, PMB 640435<br/>
+Austin, TX 78728, USA
 
 ### 13.13 Relationship
 
@@ -664,10 +630,6 @@ For questions about these Terms, contact us at:
 **Address**: 14205 N MO PAC EXPY, STE 570, PMB 640435<br/>
 Austin, TX 78728, USA<br/>
 **Website**: https://opentrace.com
-
-For technical support: [SUPPORT EMAIL]
-For security issues: [SECURITY EMAIL]
-For privacy concerns: [PRIVACY EMAIL]
 
 ---
 
@@ -687,29 +649,4 @@ For privacy concerns: [PRIVACY EMAIL]
 
 ---
 
-## Version History
-
-- **[DATE]**: Initial draft created from codebase analysis
-
----
-
 **END OF TERMS OF SERVICE**
-
----
-
-## NEXT STEPS FOR LEGAL REVIEW
-
-This draft requires review and completion of the following by legal counsel:
-
-1. **[TO BE DETERMINED]** sections need specific details
-2. **Contact information** needs to be filled in (emails, addresses)
-3. **Governing law and jurisdiction** must be selected
-4. **Dispute resolution method** (arbitration vs. courts) must be chosen
-5. **Pricing and billing terms** need to be finalized
-6. **Data residency and compliance** (GDPR, CCPA, etc.) should be added if applicable
-7. **Export control** details should be verified
-8. **Insurance and liability caps** should be reviewed by counsel
-9. **Enterprise vs. standard terms** may need separate agreements
-10. **Compliance certifications** (SOC 2, ISO 27001, etc.) should be referenced if available
-
-This document was generated from source code analysis and general legal templates. It must not be used without thorough review by qualified legal counsel familiar with software licensing, SaaS agreements, AI/ML liability, and applicable jurisdictional requirements.
