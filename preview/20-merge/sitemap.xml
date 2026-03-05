@@ -9,10 +9,6 @@
          <lastmod>2026-03-05</lastmod>
     </url>
     <url>
-         <loc>https://opentrace.github.io/docs/chat/</loc>
-         <lastmod>2026-03-05</lastmod>
-    </url>
-    <url>
          <loc>https://opentrace.github.io/docs/getting-started/</loc>
          <lastmod>2026-03-05</lastmod>
     </url>
@@ -30,6 +26,14 @@
     </url>
     <url>
          <loc>https://opentrace.github.io/docs/workflows/</loc>
+         <lastmod>2026-03-05</lastmod>
+    </url>
+    <url>
+         <loc>https://opentrace.github.io/docs/chat/</loc>
+         <lastmod>2026-03-05</lastmod>
+    </url>
+    <url>
+         <loc>https://opentrace.github.io/docs/chat/slack/</loc>
          <lastmod>2026-03-05</lastmod>
     </url>
     <url>
@@ -58,10 +62,6 @@
     </url>
     <url>
          <loc>https://opentrace.github.io/docs/integrations/gitlab/</loc>
-         <lastmod>2026-03-05</lastmod>
-    </url>
-    <url>
-         <loc>https://opentrace.github.io/docs/integrations/slack/</loc>
          <lastmod>2026-03-05</lastmod>
     </url>
     <url>
