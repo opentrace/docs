@@ -10,6 +10,12 @@ OpenTrace connects to your existing tools and infrastructure to build a complete
 | [Claude Code](claude-code.md) | OAuth / API Token | Architecture knowledge for Claude Code CLI |
 | [GitHub Copilot](github-copilot.md) | OAuth / API Token | Architecture knowledge for VS Code Copilot |
 
+## Messaging
+
+| Integration | Authentication | What It Provides |
+|-------------|----------------|------------------|
+| [Slack](slack.md) | OAuth | Chat with OpenTrace from Slack threads |
+
 ## Data Sources
 
 | Integration | Type | What It Provides | Status |

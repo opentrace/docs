@@ -4,7 +4,7 @@ OpenTrace gives your AI assistant deep understanding of your system architecture
 
 ## Quick Start
 
-Connect OpenTrace to your AI assistant and start asking questions:
+Ask questions about your architecture using the built-in [Chat](chat.md) or connect OpenTrace to your AI assistant:
 
 > "What services are in my system?"
 
@@ -22,9 +22,13 @@ Connect OpenTrace to your AI assistant and start asking questions:
 
     Setup OpenTrace and run your first queries
 
+- **[Chat](chat.md)**
+
+    Ask questions about your architecture directly in OpenTrace
+
 - **[Integrations](integrations/index.md)**
 
-    Connect GitHub, GitLab, and AWS EKS
+    Connect GitHub, GitLab, AWS EKS, and Slack
 
 - **[What You Can Do](capabilities.md)**
 
