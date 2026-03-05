@@ -23,9 +23,9 @@ Click the **New Chat** button in the chat sidebar to start a fresh conversation.
 
 The chat sidebar shows all your conversations. Click any conversation to switch to it. Your message history and context are preserved.
 
-### Archiving Conversations
+### Deleting Conversations
 
-To keep your conversation list manageable, you can archive conversations you no longer need. Archived conversations can be restored later.
+To keep your conversation list manageable, you can delete conversations you no longer need. Note that deleting a conversation permanently removes it along with all its messages.
 
 ## Asking Questions
 
