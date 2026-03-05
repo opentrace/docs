@@ -69,7 +69,9 @@ extra:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
-  - Chat: chat.md
+  - Chat:
+    - Overview: chat/index.md
+    - Slack: chat/slack.md
   - Integrations:
     - Overview: integrations/index.md
     - AI Assistants:
@@ -81,7 +83,6 @@ nav:
       - GitLab: integrations/gitlab.md
       - Excluding Files from Data Sources: otignore.md
       - AWS EKS (Early Access): integrations/aws-eks.md
-    - Slack: integrations/slack.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md
   - Privacy Policy: privacy-policy.md

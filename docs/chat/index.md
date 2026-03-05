@@ -83,3 +83,7 @@ OpenTrace offers two ways to interact with your architecture knowledge:
 | **Graph visualization** | Inline artifact panel | Depends on the AI tool |
 
 Both approaches query the same knowledge graph and support the same types of questions. Choose whichever fits your workflow.
+
+## Chat from Slack
+
+You can also start OpenTrace Chat conversations directly from Slack. See the [Slack integration](slack.md) page for details.

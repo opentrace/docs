@@ -6,7 +6,7 @@ OpenTrace gives your AI assistant deep knowledge about your system architecture.
 
 ## Try the Built-in Chat
 
-The fastest way to get started is the built-in [Chat](chat.md). Log in to your OpenTrace dashboard, open Chat from the sidebar, and start asking questions — no configuration needed.
+The fastest way to get started is the built-in [Chat](chat/index.md). Log in to your OpenTrace dashboard, open Chat from the sidebar, and start asking questions — no configuration needed.
 
 > "What services are in my system?"
 
@@ -58,6 +58,6 @@ Your AI assistant now has the context it needs to give you meaningful answers ab
 
 ## Next Steps
 
-- [Chat](chat.md) - Use the built-in chat to explore your architecture
+- [Chat](chat/index.md) - Use the built-in chat to explore your architecture
 - [What You Can Do](capabilities.md) - Full list of questions you can ask
 - [Example Workflows](workflows.md) - Common scenarios and how to approach them

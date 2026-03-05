@@ -114,7 +114,7 @@ The AI traces deeper connections you might have missed.
 
 ## Quick Architecture Q&A with Chat
 
-You need a fast answer about your system without switching tools. Use the built-in [Chat](chat.md):
+You need a fast answer about your system without switching tools. Use the built-in [Chat](chat/index.md):
 
 **1. Open Chat and ask your question**
 
