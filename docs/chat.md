@@ -39,10 +39,6 @@ Chat has access to your full OpenTrace knowledge graph. You can ask the same typ
 | **Connections** | "How does the frontend connect to payments?" |
 | **Investigations** | "Help me debug why orders are slow" |
 
-### Asking About Specific Nodes
-
-You can start a chat with context already attached. From any node or investigation in OpenTrace, click **Ask about this** to open a new chat pre-loaded with that context. This is useful when you're exploring the graph and want to dive deeper into a specific component.
-
 ## Understanding Responses
 
 Chat responses include several elements beyond plain text.
@@ -74,10 +70,6 @@ Responses are rendered with full markdown support including code blocks, tables,
 **Ask follow-up questions to drill deeper:**
 
 > Start with "What services are involved in checkout?" then follow up with "How does checkout-api connect to the database?"
-
-**Use "Ask about this" for contextual questions:**
-
-> When viewing a node in the graph, click "Ask about this" to get answers grounded in that specific component.
 
 ## Chat vs. MCP Integrations
 
