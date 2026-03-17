@@ -12,7 +12,7 @@ Connect OpenTrace to your AI assistant and start asking questions:
 
 > "Help me investigate why checkout is failing"
 
-[Get Started](getting-started.md){ .md-button .md-button--primary }
+[Try Now](https://oss.opentrace.ai){ .md-button .md-button--primary target="_blank" rel="noopener" }
 
 ## Documentation
 

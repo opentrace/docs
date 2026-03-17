@@ -1,0 +1,284 @@
+/* ═══════════════════════════════════════════════
+   OpenTrace Docs — Custom Theme
+   Matches opentrace.com website design
+   ═══════════════════════════════════════════════ */
+
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── Color Palette (dark-only, matching website) ─── */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #08080d;
+  --md-default-fg-color: #f0f0f5;
+  --md-default-fg-color--light: #a0a0b8;
+  --md-default-fg-color--lighter: #6b6b80;
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.06);
+
+  --md-primary-fg-color: #6C8EFF;
+  --md-primary-fg-color--light: #8aa4ff;
+  --md-primary-fg-color--dark: #5070e0;
+  --md-primary-bg-color: #f0f0f5;
+  --md-primary-bg-color--light: #a0a0b8;
+
+  --md-accent-fg-color: #A855F7;
+  --md-accent-fg-color--transparent: rgba(168, 85, 247, 0.1);
+  --md-accent-bg-color: #f0f0f5;
+
+  /* Code */
+  --md-code-bg-color: #12121c;
+  --md-code-fg-color: #f0f0f5;
+  --md-code-hl-color: rgba(108, 142, 255, 0.15);
+
+  /* Typeset */
+  --md-typeset-color: #f0f0f5;
+  --md-typeset-a-color: #6C8EFF;
+
+  /* Footer */
+  --md-footer-bg-color: #0e0e16;
+  --md-footer-bg-color--dark: #08080d;
+  --md-footer-fg-color: #a0a0b8;
+  --md-footer-fg-color--light: #6b6b80;
+  --md-footer-fg-color--lighter: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Typography ─── */
+:root {
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --md-code-font: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Host Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+/* ─── Header / Nav ─── */
+.md-header {
+  background: rgba(8, 8, 13, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Sidebar / Nav ─── */
+.md-sidebar {
+  background: transparent;
+}
+
+.md-nav__link {
+  color: #a0a0b8;
+  transition: color 0.2s ease;
+}
+
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: #6C8EFF;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: #6C8EFF;
+  font-weight: 500;
+}
+
+/* Active indicator uses gradient */
+.md-nav__link--active {
+  border-color: #6C8EFF;
+}
+
+/* ─── Tabs (if enabled) ─── */
+.md-tabs {
+  background: #0e0e16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Content area ─── */
+.md-main {
+  background: #08080d;
+}
+
+.md-content {
+  background: transparent;
+}
+
+/* ─── Links ─── */
+.md-typeset a {
+  color: #6C8EFF;
+  transition: color 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: #A855F7;
+}
+
+/* ─── Code blocks ─── */
+.md-typeset code {
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  color: #f0f0f5;
+}
+
+.md-typeset pre {
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+.md-typeset pre > code {
+  border: none;
+  background: transparent;
+}
+
+/* Copy button in code blocks */
+.md-clipboard {
+  color: #6b6b80;
+}
+
+.md-clipboard:hover {
+  color: #6C8EFF;
+}
+
+/* ─── Admonitions ─── */
+.md-typeset .admonition,
+.md-typeset details {
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Tables ─── */
+.md-typeset table:not([class]) {
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: rgba(255, 255, 255, 0.03);
+  color: #f0f0f5;
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) td {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Search ─── */
+.md-search__input {
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #f0f0f5;
+}
+
+.md-search__input::placeholder {
+  color: #6b6b80;
+}
+
+.md-search-result {
+  background: #0e0e16;
+}
+
+.md-search-result__link:hover {
+  background: #12121c;
+}
+
+/* ─── Footer ─── */
+.md-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6C8EFF;
+}
+
+/* ─── Gradient accent for headings ─── */
+.md-typeset h1 {
+  background: linear-gradient(135deg, #6C8EFF, #A855F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Buttons / Primary actions ─── */
+.md-typeset .md-button--primary {
+  background: linear-gradient(135deg, #6C8EFF, #A855F7);
+  border: none;
+  color: #f0f0f5;
+}
+
+.md-typeset .md-button--primary:hover {
+  opacity: 0.9;
+}
+
+/* ─── Header "Try Now" button ─── */
+.md-header__try-now {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  margin-right: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #f0f0f5;
+  background: linear-gradient(135deg, #6C8EFF, #A855F7);
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.md-header__try-now:hover {
+  opacity: 0.85;
+  color: #f0f0f5;
+}
+
+/* Hide on very small screens to avoid crowding */
+@media screen and (max-width: 480px) {
+  .md-header__try-now {
+    display: none;
+  }
+}
+
+/* ─── Selection color ─── */
+::selection {
+  background: rgba(108, 142, 255, 0.3);
+  color: #f0f0f5;
+}
