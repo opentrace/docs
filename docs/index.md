@@ -4,7 +4,7 @@ OpenTrace gives your AI assistant deep understanding of your system architecture
 
 ## Quick Start
 
-Connect OpenTrace to your AI assistant and start asking questions:
+Ask questions about your architecture using the built-in [Chat](chat/index.md) or connect OpenTrace to your AI assistant:
 
 > "What services are in my system?"
 
@@ -21,6 +21,10 @@ Connect OpenTrace to your AI assistant and start asking questions:
 - **[Getting Started](getting-started.md)**
 
     Setup OpenTrace and run your first queries
+
+- **[Chat](chat/index.md)**
+
+    Ask questions about your architecture directly in OpenTrace
 
 - **[Integrations](integrations/index.md)**
 

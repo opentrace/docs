@@ -62,6 +62,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Chat:
+    - Overview: chat/index.md
+    - Slack: chat/slack.md
   - Integrations:
     - Overview: integrations/index.md
     - AI Assistants:

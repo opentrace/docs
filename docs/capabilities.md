@@ -1,6 +1,6 @@
 # What You Can Do
 
-OpenTrace enables your AI assistant to answer questions about your system architecture. Here's what you can ask.
+OpenTrace answers questions about your system architecture — either through the built-in [Chat](chat/index.md) or via [MCP integrations](integrations/index.md) with your existing AI tools. Here's what you can ask.
 
 ## Discover Your System
 

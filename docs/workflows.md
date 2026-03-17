@@ -112,6 +112,30 @@ The AI traces deeper connections you might have missed.
 
 ---
 
+## Quick Architecture Q&A with Chat
+
+You need a fast answer about your system without switching tools. Use the built-in [Chat](chat/index.md):
+
+**1. Open Chat and ask your question**
+
+> "What services handle payments in our system?"
+
+The AI queries your knowledge graph and lists all payment-related services with their dependencies.
+
+**2. Click on an artifact to visualize**
+
+When the response mentions a service, click the artifact chip to open the graph visualization panel and see its connections.
+
+**3. Ask follow-up questions in the same conversation**
+
+> "Which of those services connect to external payment providers?"
+
+> "What would break if stripe-gateway goes down?"
+
+Chat maintains context across the conversation, so each follow-up builds on the previous answers.
+
+---
+
 ## Debugging Performance Issues
 
 The API is slow. Figure out why:
