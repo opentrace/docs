@@ -14,24 +14,24 @@
   --md-default-fg-color--lighter: #6b6b80;
   --md-default-fg-color--lightest: rgba(255, 255, 255, 0.06);
 
-  --md-primary-fg-color: #6C8EFF;
-  --md-primary-fg-color--light: #8aa4ff;
-  --md-primary-fg-color--dark: #5070e0;
+  --md-primary-fg-color: #F97316;
+  --md-primary-fg-color--light: #fb923c;
+  --md-primary-fg-color--dark: #ea670d;
   --md-primary-bg-color: #f0f0f5;
   --md-primary-bg-color--light: #a0a0b8;
 
-  --md-accent-fg-color: #A855F7;
-  --md-accent-fg-color--transparent: rgba(168, 85, 247, 0.1);
+  --md-accent-fg-color: #F59E0B;
+  --md-accent-fg-color--transparent: rgba(249, 115, 22, 0.1);
   --md-accent-bg-color: #f0f0f5;
 
   /* Code */
   --md-code-bg-color: #12121c;
   --md-code-fg-color: #f0f0f5;
-  --md-code-hl-color: rgba(108, 142, 255, 0.15);
+  --md-code-hl-color: rgba(249, 115, 22, 0.15);
 
   /* Typeset */
   --md-typeset-color: #f0f0f5;
-  --md-typeset-a-color: #6C8EFF;
+  --md-typeset-a-color: #F97316;
 
   /* Footer */
   --md-footer-bg-color: #0e0e16;
@@ -86,17 +86,17 @@
 
 .md-nav__link:hover,
 .md-nav__link--active {
-  color: #6C8EFF;
+  color: #F97316;
 }
 
 .md-nav__item--active > .md-nav__link {
-  color: #6C8EFF;
+  color: #F97316;
   font-weight: 500;
 }
 
-/* Active indicator uses gradient */
+/* Active indicator uses accent */
 .md-nav__link--active {
-  border-color: #6C8EFF;
+  border-color: #F97316;
 }
 
 /* ─── Tabs (if enabled) ─── */
@@ -116,12 +116,12 @@
 
 /* ─── Links ─── */
 .md-typeset a {
-  color: #6C8EFF;
+  color: #F97316;
   transition: color 0.2s ease;
 }
 
 .md-typeset a:hover {
-  color: #A855F7;
+  color: #F59E0B;
 }
 
 /* ─── Code blocks ─── */
@@ -149,7 +149,7 @@
 }
 
 .md-clipboard:hover {
-  color: #6C8EFF;
+  color: #F97316;
 }
 
 /* ─── Admonitions ─── */
@@ -226,12 +226,12 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6C8EFF;
+  background: #F97316;
 }
 
 /* ─── Gradient accent for headings ─── */
 .md-typeset h1 {
-  background: linear-gradient(135deg, #6C8EFF, #A855F7);
+  background: linear-gradient(135deg, #F97316, #F59E0B);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -239,13 +239,15 @@
 
 /* ─── Buttons / Primary actions ─── */
 .md-typeset .md-button--primary {
-  background: linear-gradient(135deg, #6C8EFF, #A855F7);
+  background: #F97316;
   border: none;
-  color: #f0f0f5;
+  color: #fff;
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.25);
 }
 
 .md-typeset .md-button--primary:hover {
-  opacity: 0.9;
+  background: #ea670d;
+  box-shadow: 0 0 32px rgba(249, 115, 22, 0.4);
 }
 
 /* ─── Header "Try Now" button ─── */
@@ -257,17 +259,19 @@
   font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #f0f0f5;
-  background: linear-gradient(135deg, #6C8EFF, #A855F7);
+  color: #fff;
+  background: #F97316;
   border-radius: 6px;
   text-decoration: none;
   white-space: nowrap;
-  transition: opacity 0.2s ease;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.25);
+  transition: all 0.2s ease;
 }
 
 .md-header__try-now:hover {
-  opacity: 0.85;
-  color: #f0f0f5;
+  background: #ea670d;
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.4);
+  color: #fff;
 }
 
 /* Hide on very small screens to avoid crowding */
@@ -279,6 +283,6 @@
 
 /* ─── Selection color ─── */
 ::selection {
-  background: rgba(108, 142, 255, 0.3);
+  background: rgba(249, 115, 22, 0.3);
   color: #f0f0f5;
 }
