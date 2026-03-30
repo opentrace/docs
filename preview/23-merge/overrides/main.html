@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  <title>{{ config.site_name }}{% if page.title %} — {{ page.title }}{% endif %}</title>
+{% endblock %}
+
+{% block extrahead %}
+  <style>
+    .md-header__topic ~ .md-header__try-now {
+      margin-left: auto;
+    }
+  </style>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    // Inject "Try Now" button into header next to search
+    (function() {
+      var container = document.querySelector('.md-header__inner');
+      if (!container) return;
+      var btn = document.createElement('a');
+      btn.href = 'https://oss.opentrace.ai';
+      btn.target = '_blank';
+      btn.rel = 'noopener';
+      btn.className = 'md-header__try-now';
+      btn.textContent = 'Try Now';
+      // Insert before the search or source icon
+      var search = container.querySelector('.md-search');
+      if (search) {
+        search.parentNode.insertBefore(btn, search);
+      } else {
+        container.appendChild(btn);
+      }
+    })();
+  </script>
+{% endblock %}
