@@ -23,6 +23,9 @@ Connect GitHub to sync repository data and analyze code structure.
 
 You can exclude specific files or directories from analysis using [`.otignore` files](../otignore.md).
 
+!!! note "Automatic syncing"
+    OpenTrace automatically picks up new commits via GitHub webhooks — there's no need to manually trigger a sync. Any push to the synced branch (your default branch, or a [custom branch](#changing-the-synced-branch) if configured) will automatically start a re-sync. The **Sync** button in the UI is only needed if you want to force a manual refresh.
+
 ## Permissions Required
 
 OpenTrace requests read-only access to:
