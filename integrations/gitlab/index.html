@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
   <title>OpenTrace Documentation — GitLab</title>
@@ -1089,6 +1089,10 @@
 <li>Issues</li>
 </ul>
 <p>You can exclude specific files or directories from analysis using <a href="../../otignore/"><code>.otignore</code> files</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Automatic syncing</p>
+<p>OpenTrace automatically picks up new commits via GitLab webhooks — there's no need to manually trigger a sync. Any push to the synced branch (your default branch, or a <a href="#changing-the-synced-branch">custom branch</a> if configured) will automatically start a re-sync. The <strong>Sync</strong> button in the UI is only needed if you want to force a manual refresh.</p>
+</div>
 <h2 id="self-hosted-gitlab">Self-Hosted GitLab<a class="headerlink" href="#self-hosted-gitlab" title="Permanent link">&para;</a></h2>
 <p>For self-hosted GitLab instances, you may need to configure the GitLab URL in your OpenTrace settings before connecting.</p>
 <h2 id="changing-the-synced-branch">Changing the Synced Branch<a class="headerlink" href="#changing-the-synced-branch" title="Permanent link">&para;</a></h2>

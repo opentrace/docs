@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
   <title>OpenTrace Documentation — GitHub</title>
@@ -1089,6 +1089,10 @@
 <li>Issues</li>
 </ul>
 <p>You can exclude specific files or directories from analysis using <a href="../../otignore/"><code>.otignore</code> files</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Automatic syncing</p>
+<p>OpenTrace automatically picks up new commits via GitHub webhooks — there's no need to manually trigger a sync. Any push to the synced branch (your default branch, or a <a href="#changing-the-synced-branch">custom branch</a> if configured) will automatically start a re-sync. The <strong>Sync</strong> button in the UI is only needed if you want to force a manual refresh.</p>
+</div>
 <h2 id="permissions-required">Permissions Required<a class="headerlink" href="#permissions-required" title="Permanent link">&para;</a></h2>
 <p>OpenTrace requests read-only access to:</p>
 <ul>
