@@ -73,8 +73,9 @@ nav:
           - GitLab: integrations/gitlab.md
           - Excluding Files from Data Sources: otignore.md
           - AWS EKS (Early Access): integrations/aws-eks.md
-  - What You Can Do: capabilities.md
   - Example Workflows: workflows.md
+  - What You Can Do: capabilities.md
+  - Features: features.md
   - Privacy Policy: privacy-policy.md
   - Terms of Service: terms-of-service.md
   - Subprocessor List: subprocessor-list.md
