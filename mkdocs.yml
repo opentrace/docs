@@ -18,7 +18,7 @@ theme:
   favicon: assets/favicon.ico
   palette:
     scheme: slate
-  font: false  # Loaded via CSS for full control
+  font: false # Loaded via CSS for full control
   features:
     - navigation.instant
     - navigation.tracking
@@ -63,17 +63,18 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Integrations:
-    - Overview: integrations/index.md
-    - AI Assistants:
-      - Claude Code: integrations/claude-code.md
-      - Claude Web: integrations/claude-web.md
-      - GitHub Copilot: integrations/github-copilot.md
-    - Data Sources:
-      - GitHub: integrations/github.md
-      - GitLab: integrations/gitlab.md
-      - Excluding Files from Data Sources: otignore.md
-      - AWS EKS (Early Access): integrations/aws-eks.md
+      - Overview: integrations/index.md
+      - AI Assistants:
+          - Claude Code: integrations/claude-code.md
+          - Claude Web: integrations/claude-web.md
+          - GitHub Copilot: integrations/github-copilot.md
+      - Data Sources:
+          - GitHub: integrations/github.md
+          - GitLab: integrations/gitlab.md
+          - Excluding Files from Data Sources: otignore.md
+          - AWS EKS (Early Access): integrations/aws-eks.md
   - What You Can Do: capabilities.md
   - Example Workflows: workflows.md
   - Privacy Policy: privacy-policy.md
   - Terms of Service: terms-of-service.md
+  - Subprocessor List: subprocessor-list.md
