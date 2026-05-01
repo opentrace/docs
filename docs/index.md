@@ -12,7 +12,7 @@ Connect OpenTrace to your AI assistant and start asking questions:
 
 > "Help me investigate why checkout is failing"
 
-[Try Now](https://oss.opentrace.ai){ .md-button .md-button--primary target="_blank" rel="noopener" }
+[Try Now](https://app.opentrace.ai){ .md-button .md-button--primary target="\_blank" rel="noopener" }
 
 ## Documentation
 
@@ -20,31 +20,31 @@ Connect OpenTrace to your AI assistant and start asking questions:
 
 - **[Getting Started](getting-started.md)**
 
-    Setup OpenTrace and run your first queries
+  Setup OpenTrace and run your first queries
 
 - **[Integrations](integrations/index.md)**
 
-    Connect GitHub, GitLab, and AWS EKS
+  Connect GitHub, GitLab, and AWS EKS
 
 - **[What You Can Do](capabilities.md)**
 
-    Full reference of questions you can ask
+  Full reference of questions you can ask
 
 - **[Example Workflows](workflows.md)**
 
-    Common scenarios and how to approach them
+  Common scenarios and how to approach them
 
 </div>
 
 ## What Can You Ask?
 
-| Category | Example |
-|----------|---------|
-| **Discovery** | "What services exist in my system?" |
-| **Dependencies** | "What does order-service depend on?" |
-| **Impact Analysis** | "What breaks if the database goes down?" |
-| **Connections** | "How does the frontend connect to payments?" |
-| **Investigations** | "Help me debug why orders are slow" |
+| Category            | Example                                      |
+| ------------------- | -------------------------------------------- |
+| **Discovery**       | "What services exist in my system?"          |
+| **Dependencies**    | "What does order-service depend on?"         |
+| **Impact Analysis** | "What breaks if the database goes down?"     |
+| **Connections**     | "How does the frontend connect to payments?" |
+| **Investigations**  | "Help me debug why orders are slow"          |
 
 ## Links
 
