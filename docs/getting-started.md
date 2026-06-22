@@ -4,9 +4,17 @@
 
 OpenTrace gives your AI assistant deep knowledge about your system architecture. It understands your services, how they connect, and how they depend on each other. This means you can ask questions about your system and get accurate, contextual answers.
 
-## Setup
+## Try the Built-in Chat
 
-To connect OpenTrace to your AI assistant, add the following to your MCP configuration:
+The fastest way to get started is the built-in [Chat](chat/index.md). Log in to your OpenTrace dashboard, open Chat from the sidebar, and start asking questions — no configuration needed.
+
+> "What services are in my system?"
+
+> "What does the payment service depend on?"
+
+## Connect Your AI Assistant
+
+To use OpenTrace with an external AI assistant (Claude, GitHub Copilot, etc.), add the following to your MCP configuration:
 
 ```json
 {
@@ -50,5 +58,6 @@ Your AI assistant now has the context it needs to give you meaningful answers ab
 
 ## Next Steps
 
+- [Chat](chat/index.md) - Use the built-in chat to explore your architecture
 - [What You Can Do](capabilities.md) - Full list of questions you can ask
 - [Example Workflows](workflows.md) - Common scenarios and how to approach them
